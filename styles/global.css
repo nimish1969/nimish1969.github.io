@@ -1,5 +1,9 @@
+@import "tailwind.css";
+@import url('https://fonts.googleapis.com/css2?family=Kumar+One&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
 html,
 body {
+  overflow-x: hidden;
   padding: 0;
   margin: 0;
   font-family:
@@ -15,6 +19,7 @@ body {
     Droid Sans,
     Helvetica Neue,
     sans-serif;
+    color: white !important;
 }
 
 a {
@@ -24,9 +29,32 @@ a {
 
 * {
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+.kumar-one-regular {
+  font-family: "Kumar One", serif;
+  font-weight: 400 !important;
+  font-style: normal;
+  margin-top: 3px;
+}
+
+nav {
+  width: 80% !important;
+  --navbar-height: 3rem !important;
+  border-radius: 10px;
+}
+
+.bg-background\/70 {
+  background-color: hsl(var(--nextui-background) / 0.4);
+}
+
+.text-foreground {
+  --tw-text-opacity: 1;
+  color: white !important;
 }

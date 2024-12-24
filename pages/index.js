@@ -1,5 +1,13 @@
+import React from "react";
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 import styles from '../styles/Home.module.css';
+
+
+// Dynamically import the ClientOnlyComponent with ssr: false
+const Navbar = dynamic(() => import('./navbar'), {
+  ssr: false, // Ensures this component is only rendered on the client-side
+});
 
 export default function Home() {
   return (
@@ -10,57 +18,44 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className={styles.title}>
-          Nimish Shah
-        </h1>
-
-        <h4>
-          Graphic Design Specialist
-        </h4>
+        <Navbar/>
       </main>
 
       <footer>
-        Made with ❤️ by 
+        <p>&copy; 2024 Nimish Shah. All rights reserved.</p>
+        <br/>
+        <code>Made with ❤️ by 
           <a
             href="https://github.com/paurav11"
             target="_blank"
             rel="noopener noreferrer"
           >
           &nbsp;Paurav Shah
-          </a>.
+          </a>.</code>
       </footer>
 
       <style jsx>{`
         main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          width: 100%;
+          height: 100vh;
+          background-image: url('1.jpg'), url('2.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
         }
         footer {
+          padding: 10px 0;
           width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          height: auto;
+          border-top: 2px solid blue;
           background-color: #202830;
-          color: white;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
+          text-align: center;
         }
         code {
-          background: #fafafa;
           border-radius: 5px;
           padding: 0.75rem;
-          font-size: 1.1rem;
+          font-size: 0.7rem;
           font-family:
             Menlo,
             Monaco,
