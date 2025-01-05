@@ -3,6 +3,7 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   overflow-x: hidden;
   padding: 0;
   margin: 0;
@@ -19,7 +20,8 @@ body {
     Droid Sans,
     Helvetica Neue,
     sans-serif;
-    color: white !important;
+  color: white !important;
+  background: linear-gradient(#610365, #111778, #610365);
 }
 
 a {
@@ -32,22 +34,24 @@ a {
   max-width: 100%;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.kumar-one-regular {
-  font-family: "Kumar One", serif;
-  font-weight: 400 !important;
-  font-style: normal;
-  margin-top: 3px;
-}
-
 nav {
-  width: 80% !important;
+  margin: 2% auto;
+  width: 90vw !important;
   --navbar-height: 3rem !important;
+  position: fixed !important;
   border-radius: 10px;
+}
+
+.max-w-\[1024px\] {
+  max-width: 100vw;
+}
+
+#brand-logo-section {
+  margin-left: 5%;
+}
+
+#brand-social-section {
+  margin-right: 5%;
 }
 
 .bg-background\/70 {
@@ -57,4 +61,16 @@ nav {
 .text-foreground {
   --tw-text-opacity: 1;
   color: white !important;
+}
+
+.kumar-one-regular {
+  font-family: "Kumar One", serif;
+  font-weight: 400 !important;
+  font-style: normal;
+  margin-top: 3px;
+}
+
+#resume-btn {
+  color: white;
+  border: 1px solid white;
 }
