@@ -20,6 +20,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-github-button": "^0.1.11",
     "react-icons": "^5.4.0"
   },
   "engines": {

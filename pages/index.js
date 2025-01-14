@@ -1,10 +1,8 @@
 import React from "react";
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-import styles from '../styles/Home.module.css';
-import { Link } from "@nextui-org/react";
 import {Button} from "@nextui-org/react";
-import { FaFileArrowDown } from "react-icons/fa6";
+import {FaFileArrowDown, FaEnvelope, FaGithub} from "react-icons/fa6";
 
 // Dynamically import the ClientOnlyComponent with ssr: false
 const Navbar = dynamic(() => import('./navbar'), {
@@ -24,9 +22,10 @@ const downloadResume = () => {
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Nimish Shah | Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="./favicon_io/favicon.ico" />
       </Head>
 
@@ -34,44 +33,63 @@ export default function Home() {
         <Navbar/>
       </header>
 
-      <main>
-        <div id="intro-section"> 
-          <div id="intro-content">
-            <div id="photo-div">
-              <img id="profile-photo" title="Nimish Shah" src="nimish_photo.png" alt="nimish_photo.png"/>
+      <div id="content-wrapper">
+        <main id="main">
+          <section id="intro">
+            <div id="intro-content">
+              <div id="photo-div">
+                <img id="profile-photo" title="Nimish Shah" src="nimish_photo.png" alt="nimish_photo.png"/>
+              </div>
+              <div id="intro-div">
+                <p id="user-name" className="kumar-one-regular">Nimish Shah</p>
+                <br/>
+                <p><i><span id="user-role">Graphic Design Specialist</span></i></p>
+                <br/>
+                <q id="design-quote"><i>Design is always a balanced combination of graphics and text, it looks good when arranged perfectly.</i></q>
+                <br/>
+                <br/>
+                <p>Hey there, welcome to my portfolio! I specialize in a wide range of creative work, including graphic design, 3D modeling, and with research &amp; development in visual arts.</p>
+                <br/>
+                <p>My portfolio highlights projects that blend technical precision with artistic vision, spanning from branding and digital content to immersive 3D environments. Each piece showcases a dedication to innovation, pushing the boundaries of design and technology to create visually compelling and functional outcomes.</p>
+                <br/>
+                <p>Kindly, go through my resume for more info and let me know if I'm the person that you might be looking for. Always looking forward to connect with creative minds.</p>
+                <br/>
+                <div id="intro-btns">
+                  <Button id="resume-btn" className="bordered-btn" title="Download Resume" color="primary" variant="bordered" onPress={downloadResume}>
+                    <FaFileArrowDown/>&nbsp;Resume
+                  </Button>
+                  <Button id="email-btn" className="bordered-btn" title="Email" color="primary" variant="bordered" as="a" target="_blank" href="mailto:shahnimish.1969@gmail.com">
+                    <FaEnvelope/>&nbsp;Send Message
+                  </Button>
+                </div>
+              </div>
             </div>
-            <div id="intro-div">
-              <h1>Nimish Shah</h1>
-              <br/>
-              <h4><i>Graphic Design Specialist</i></h4>
-              <br/>
-              <p>I specialize in a wide range of creative work, including graphic design, 3D modeling, and research & development in visual arts. My portfolio highlights projects that blend technical precision with artistic vision, spanning from branding and digital content to immersive 3D environments. Each piece showcases a dedication to innovation, pushing the boundaries of design and technology to create visually compelling and functional outcomes.</p>
-              <br/>
-              <Button id="resume-btn" title="Download Resume" color="primary" variant="bordered" onPress={downloadResume}>
-                <FaFileArrowDown/>&nbsp;Resume
-              </Button>
-            </div>
-          </div>
-        </div>
+          </section>
 
-        {/* <div id="about-section">
+          <section id="about">
 
-        </div>
+          </section>
 
-        <div id="my-services-section">
+          <section id="services">
 
-        </div>
+          </section>
 
-        <div id="portfolio-section">
+          <section id="portfolio">
 
-        </div>
+          </section>
 
-        <div id="contact-section">
+          <section id="contact">
 
-        </div> */}
+          </section>
+        </main>
 
         <footer id="portfolio-footer">
           <p>&copy; 2025 Nimish Shah. All rights reserved.</p>
+          <br/>
+          <Button id="github-btn" className="bordered-btn" title="Nimish Shah | GitHub" color="primary" variant="bordered" as="a" target="_blank" href="https://github.com/nimish1969">
+            <FaGithub/>&nbsp;nimish1969
+          </Button>
+          <br/>
           <br/>
           <code>Made with ❤️ by 
             <a target="_blank" title="Paurav Shah | GitHub" href="https://github.com/paurav11">
@@ -79,32 +97,47 @@ export default function Home() {
             </a>
           .</code>
         </footer>
-      </main>
+      </div>
 
       <style jsx>{`
         #navbar-item {
           padding: 2rem !important;
         }
+        #content-wrapper {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+        }
         main {
+          flex-grow: 1;
           width: 100%;
           height: auto;
         }
-        #intro-section, #about-section, #my-services-section, #portfolio-section, #contact-section {
+        #intro, #about, #services, #portfolio, #contact {
+          overflow: hidden;
           margin: auto;
           width: 80vw;
           height: 100vh;
+          z-index: 1;
         }
-        #intro-section {
-          margin: 10% 15% 0 15%;
+        #intro {
+          margin: 0 15% 0 15%;
         }
         #intro-content {
+          overflow: hidden;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          margin: auto;
+          position: absolute;
           width: 66vw;
           display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
           justify-content: center;
           align-items: center;
-          verical-align: center;
+          z-index: 1;
         }
         #photo-div {
           text-align: right;
@@ -121,15 +154,30 @@ export default function Home() {
           padding: 0 0 0 3%;
           width: 50%;
         }
-        h1 {
+        #user-name {
           font-size: 2rem;
         }
+        #user-role {
+          border: 1px solid white;
+          padding: 1.5%;
+          border-radius: 10px;
+        }
+        #intro-btns {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: left;
+          align-items: center;
+        }
         footer {
+          overflow: hidden;
           padding: 15px 0;
           width: 100%;
-          height: auto;
           background-color: #202830;
           text-align: center;
+          position: relative;
+          bottom: 0;
+          z-index: 1;
         }
         code {
           border-radius: 5px;
@@ -147,17 +195,31 @@ export default function Home() {
         }
 
         @media only screen and (max-width: 950px) {
-          #intro-section {
-            margin: 20% 10% 0 10%;
+          main {
+            margin-bottom: 5%;
+            padding: 20% 0 0 0;
+            width: 100%;
+            height: auto;
+          }
+          #intro, #about, #services, #portfolio, #contact {
+            overflow: hidden;
+            margin: auto;
+            width: 80vw;
+            height: auto;
+            z-index: 1;
+          }
+          #intro {
+            margin: 0 10% 0 10%;
           }
           #intro-content {
+            overflow: hidden;
+            position: relative;
             width: 100vw;
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
             justify-content: center;
             align-items: center;
-            verical-align: center;
           }
           #photo-div {
             text-align: center;
@@ -174,6 +236,9 @@ export default function Home() {
             text-align: center;
             padding: 5% 0 0 0;
             width: 100vw;
+          }
+          #intro-btns {
+            justify-content: center;
           }
         }
 

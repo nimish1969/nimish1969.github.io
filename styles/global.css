@@ -1,12 +1,18 @@
 @import "tailwind.css";
 @import url('https://fonts.googleapis.com/css2?family=Kumar+One&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
 html,
 body {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  padding: 0;
-  margin: 0;
+  overflow-y: auto;
   font-family:
     Inter,
     -apple-system,
@@ -27,11 +33,6 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-  max-width: 100%;
 }
 
 nav {
@@ -67,10 +68,22 @@ nav {
   font-family: "Kumar One", serif;
   font-weight: 400 !important;
   font-style: normal;
+}
+
+#brand-logo {
   margin-top: 3px;
 }
 
-#resume-btn {
+.activeItem {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.bordered-btn {
   color: white;
   border: 1px solid white;
+}
+
+#email-btn {
+  margin-left: 10px;
 }

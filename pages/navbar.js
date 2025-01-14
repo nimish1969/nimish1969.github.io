@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { NextUIProvider } from "@nextui-org/react";
-import { useEffect } from 'react';
-import { FaLinkedin, FaInstagram, FaFacebook, FaGithub, FaBehance, FaDribbble, FaYoutube} from "react-icons/fa6";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, 
-  NavbarMenu, NavbarMenuItem, Link, Button } from "@nextui-org/react";
+import {NextUIProvider} from "@nextui-org/react";
+import {useEffect} from 'react';
+import {Avatar} from "@nextui-org/react";
+import {FaLinkedin, FaInstagram, FaFacebook, FaBehance, FaDribbble, FaYoutube} from "react-icons/fa6";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, 
+  NavbarMenu, NavbarMenuItem, Link} from "@nextui-org/react";
 
 export function Menu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -17,7 +18,9 @@ export function Menu() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <Link className="kumar-one-regular" title="Nimish" color="foreground" href="#">
+          <Avatar size="sm" title="Nimish" color="default" src="./Nimish_Profile_Cutout.png"/>
+          &nbsp;&nbsp;
+          <Link id="brand-logo" className="kumar-one-regular" title="Nimish" color="foreground" href="#">
             Nimish
           </Link>
         </NavbarBrand>
@@ -25,22 +28,22 @@ export function Menu() {
 
       <NavbarContent id="brand-portfolio-section" className="hidden sm:flex gap-10" justify="center">
         <NavbarItem>
-          <Link color="foreground" title="About Me" href="#about-section">
-            About Me
+          <Link id="about-item" className="menuItem" color="foreground" title="About" href="#about">
+            About
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" title="My Services" href="#my-services-section">
-            My Services
+          <Link id="services-item" className="menuItem" color="foreground" title="Services" href="#services">
+            Services
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" title="Portfolio" href="#portfolio-section">
+          <Link id="portfolio-item" className="menuItem" color="foreground" title="Portfolio" href="#portfolio">
             Portfolio
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" title="Contact" href="#contact-section">
+          <Link id="contact-item" className="menuItem" color="foreground" title="Contact" href="#contact">
             Contact
           </Link>
         </NavbarItem>
@@ -77,11 +80,6 @@ export function Menu() {
             <FaYoutube/>
           </Link>
         </NavbarItem> */}
-        <NavbarItem>
-          <Link color="foreground" title="Nimish Shah | GitHub" target="_blank" href="https://github.com/nimish1969">
-            <FaGithub/>
-          </Link>
-        </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
         {/* {menuItems.map((item, index) => (
@@ -96,22 +94,22 @@ export function Menu() {
           </NavbarMenuItem>
         ))} */}
         <NavbarMenuItem>
-          <Link className="w-full" title="About Me" color="foreground" href="#about-section" size="lg">
-            About Me
+          <Link id="about-item" className="w-full" title="About" color="foreground" href="#about" size="lg">
+            About
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link className="w-full" title="My Services" color="foreground" href="#my-services-section" size="lg">
-            My Services
+          <Link id="services-item" className="w-full" title="Services" color="foreground" href="#services" size="lg">
+            Services
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link className="w-full" title="Portfolio" color="foreground" href="#portfolio-section" size="lg">
+          <Link id="portfolio-item" className="w-full" title="Portfolio" color="foreground" href="#portfolio" size="lg">
             Portfolio
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
-          <Link className="w-full" title="Contact" color="foreground" href="#contact-section" size="lg">
+          <Link id="contact-item" className="w-full" title="Contact" color="foreground" href="#contact" size="lg">
             Contact
           </Link>
         </NavbarMenuItem>
