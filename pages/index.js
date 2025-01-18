@@ -3,6 +3,8 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import {Button} from "@nextui-org/react";
 import {FaFileArrowDown, FaEnvelope, FaGithub} from "react-icons/fa6";
+import { useState, useEffect, useRef } from 'react';
+// import {useRouter} from 'next/router';
 
 // Dynamically import the ClientOnlyComponent with ssr: false
 const Navbar = dynamic(() => import('./navbar'), {
@@ -21,6 +23,137 @@ const downloadResume = () => {
 };
 
 export default function Home() {
+  // const router = useRouter();
+  const sectionRef = useRef(null);
+  const sectionRef1 = useRef(null);
+  const sectionRef2 = useRef(null);
+  const sectionRef3 = useRef(null);
+  const sectionRef4 = useRef(null);
+  const [isVisible, setIsVisible] = useState(false); // Track visibility
+  const [lastScrollTop, setLastScrollTop] = useState(0); // Track the last scroll position
+
+  // Function to detect scroll direction and active section
+  const handleScroll = () => {
+    const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollDirection = currentScrollTop > lastScrollTop ? 'down' : 'up';
+
+    // Update the last scroll position
+    setLastScrollTop(currentScrollTop);
+
+    // console.log(`Scrolling ${scrollDirection}`); // Log scroll direction (up or down)
+    if (scrollDirection === 'down') {
+      // Load more content, etc.
+      // console.log('User is scrolling down');
+    } else if(scrollDirection === 'up'){
+      // Handle scrolling up actions
+      // console.log('User is scrolling up');
+    }
+
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight) {
+      // console.log('You have reached the bottom!');
+      // Trigger a function to load more content here
+    } else if(window.scrollY === 0){
+      // console.log('You have reached the top!');
+      // Trigger a function to load more content here
+    }
+  };
+  
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Section is visible in the viewport
+            setIsVisible(true);
+
+            const links = document.getElementsByClassName('menuItem');
+            for (let i = 0; i < links.length; i++) {
+              links[i].classList.remove('activeItem');
+            }
+
+            // console.log(entry.target.id + ' section is visible');
+            let sectionId = entry.target.id;
+            if(sectionId === 'about'){
+              let activeLink = document.getElementById('about-item');
+              if (activeLink) {
+                activeLink.classList.add('activeItem');
+              }
+            } else if(sectionId === 'services'){
+              let activeLink = document.getElementById('services-item');
+              if (activeLink) {
+                activeLink.classList.add('activeItem');
+              }
+            } else if(sectionId === 'portfolio'){
+              let activeLink = document.getElementById('portfolio-item');
+              if (activeLink) {
+                activeLink.classList.add('activeItem');
+              }
+            } else if(sectionId === 'contact'){
+              let activeLink = document.getElementById('contact-item');
+              if (activeLink) {
+                activeLink.classList.add('activeItem');
+              }
+            }
+          } else {
+            // Section is not visible
+            setIsVisible(false);
+          }
+        });
+      },
+      {
+        threshold: 0.5, // 50% of the section should be in the viewport to consider it visible
+      }
+    );
+
+    const section = sectionRef.current;
+    if (section) {
+      observer.observe(section);
+    }
+
+    const section1 = sectionRef1.current;
+    if (section1) {
+      observer.observe(section1);
+    }
+
+    const section2 = sectionRef2.current;
+    if (section2) {
+      observer.observe(section2);
+    }
+
+    const section3 = sectionRef3.current;
+    if (section3) {
+      observer.observe(section3);
+    }
+
+    const section4 = sectionRef4.current;
+    if (section4) {
+      observer.observe(section4);
+    }
+
+    // Cleanup observer on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      
+      if (section) {
+        observer.unobserve(section);
+      }
+      if (section1) {
+        observer.unobserve(section1);
+      }
+      if (section2) {
+        observer.unobserve(section2);
+      }
+      if (section3) {
+        observer.unobserve(section3);
+      }
+      if (section4) {
+        observer.unobserve(section4);
+      }
+    };
+  }, []);
+
   return (
     <div>
       <Head>
@@ -35,7 +168,7 @@ export default function Home() {
 
       <div id="content-wrapper">
         <main id="main">
-          <section id="intro">
+          <section id="intro" ref={sectionRef}>
             <div id="intro-content">
               <div id="photo-div">
                 <img id="profile-photo" title="Nimish Shah" src="nimish_photo.png" alt="nimish_photo.png"/>
@@ -52,7 +185,7 @@ export default function Home() {
                 <br/>
                 <p>My portfolio highlights projects that blend technical precision with artistic vision, spanning from branding and digital content to immersive 3D environments. Each piece showcases a dedication to innovation, pushing the boundaries of design and technology to create visually compelling and functional outcomes.</p>
                 <br/>
-                <p>Kindly, go through my resume for more info and let me know if I'm the person that you might be looking for. Always looking forward to connect with creative minds.</p>
+                <p>Kindly, go through my resume for more information and let me know if I'm the person that you might be looking for. Always looking forward to connect with creative minds.</p>
                 <br/>
                 <div id="intro-btns">
                   <Button id="resume-btn" className="bordered-btn" title="Download Resume" color="primary" variant="bordered" onPress={downloadResume}>
@@ -66,19 +199,19 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="about">
+          <section id="about" ref={sectionRef1}>
 
           </section>
 
-          <section id="services">
+          <section id="services" ref={sectionRef2}>
 
           </section>
 
-          <section id="portfolio">
+          <section id="portfolio" ref={sectionRef3}>
 
           </section>
 
-          <section id="contact">
+          <section id="contact" ref={sectionRef4}>
 
           </section>
         </main>
