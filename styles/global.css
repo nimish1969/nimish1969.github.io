@@ -71,7 +71,7 @@ nav {
 }
 
 #brand-logo {
-  margin-top: 3px;
+  margin-top: 5px;
 }
 
 .activeItem {
@@ -84,6 +84,42 @@ nav {
   border: 1px solid white;
 }
 
+.bordered-btn:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95);
+  transition: all .5s;
+}
+
 #email-btn {
   margin-left: 10px;
+}
+
+.bg-content1 {
+  --tw-bg-opacity: 0.1;
+  background-color: hsl(var(--nextui-background) / 0.1);
+}
+
+#graphic-design-services-card, #animation-services-card, #threed-works-services-card {
+  margin: auto 2% !important;
+  width: 33%;
+  max-height: 30rem;
+  height: 25rem;
+}
+
+@media only screen and (max-width: 950px) {
+  #graphic-design-services-card, #animation-services-card, #threed-works-services-card {
+    margin: 2% auto !important;
+    width: 100vh;
+    max-height: 30rem;
+    height: 25rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+          
+}
+
+@media only screen and (max-width: 600px) {
+  
 }
