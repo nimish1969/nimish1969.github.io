@@ -208,7 +208,7 @@ export default function Home() {
             <div id="services-content">
               <p>I create innovative work across creative graphic design, 2D and 3D animation, and advanced 3D projects, driven by research and development. My portfolio showcases everything from striking visual designs and engaging animations to experimental approaches with emerging tools and technologies. Each project highlights my commitment to combining artistic creativity with technical precision to craft distinctive and impactful results.</p>
               <div id="my-services">
-                <Card id="graphic-design-services-card" className="border border-gray-400">
+                <Card id="graphic-design-services-card" className="services-card border border-gray-400">
                   <CardHeader className="flex gap-3 justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -224,7 +224,7 @@ export default function Home() {
                     >
                       <g id="Layer_x0020_1">
                         <path
-                          fill="#5d75c1"
+                          fill="#d3d3ff"
                           fillRule="nonzero"
                           d="M165 149h139c10 0 19 9 19 19v53h344v-53c0-10 8-19 18-19h139c10 0 19 9 19 19v53h344v-53c0-10 8-19 18-19h139c10 0 19 9 19 19v139c0 10-9 18-19 18h-139c-10 0-18-8-18-18v-49H951c82 32 155 83 211 149 79 90 128 207 133 335h54c11 0 19 9 19 19v139c0 10-8 18-19 18h-138c-11 0-19-8-19-18V761c0-10 8-19 19-19h47c-5-119-50-227-123-311-74-85-177-145-292-166v42c0 10-9 18-19 18H685c-10 0-18-8-18-18v-42c-115 20-217 80-291 164-74 85-120 194-124 313h54c10 0 18 9 18 19v139c0 10-8 18-18 18H167c-10 0-19-8-19-18V761c0-10 9-19 19-19h48c4-128 54-246 133-337 57-64 129-116 210-147H323v49c0 10-9 18-19 18H165c-10 0-18-8-18-18V168c0-10 8-19 18-19m121 37H184v102h102zm520 0H704v102h102zm520 0h-102v102h102zM287 779H185v102h102zm1044 0h-102v102h102zm-730 243h28c-6-33-16-64-31-94-18-36-42-70-71-102-6-6-7-15-2-22l214-383c4-9 16-12 25-8 3 2 5 5 7 8l214 384c4 7 3 16-3 21-29 32-53 66-71 102-15 30-25 61-31 94h28c18 0 34 7 45 19 12 12 19 28 19 45 0 18-7 34-19 46-5 5-11 10-18 13v202c0 10-8 18-18 18-11 0-19-8-19-18v-196H611v196c0 10-8 18-18 18-11 0-19-8-19-18v-202c-7-3-13-8-18-13-12-12-19-28-19-46 0-17 7-33 19-45s28-19 45-19m65 0h177c6-39 18-75 35-110 18-36 41-69 68-101L773 501v179c17 4 33 13 45 25 16 16 26 38 26 63 0 24-10 47-26 63-17 16-39 26-63 26-25 0-47-10-64-26-16-16-26-39-26-63 0-25 10-47 26-63 13-12 28-21 45-25V501L563 811c28 32 51 65 68 101 17 35 29 71 35 110m242 37H601c-7 0-14 3-19 8s-8 12-8 19c0 8 3 15 8 20s12 8 19 8h307c7 0 14-3 19-8s8-12 8-20c0-7-3-14-8-19s-12-8-19-8M792 731c-10-10-23-16-37-16-15 0-28 6-37 16-10 9-16 22-16 37 0 14 6 27 16 37 9 9 22 15 37 15 14 0 27-6 37-15 9-10 15-23 15-37 0-15-6-28-15-37"
                         ></path>
@@ -238,11 +238,11 @@ export default function Home() {
                     <p id="graphic-design-title" className="kumar-one-regular">Graphic Design</p>
                   </CardBody>
                   <Divider />
-                  <CardFooter className="text-sm text-center p-4 break-words overflow-y-auto">
+                  <CardFooter className="card-footer text-sm text-center p-4 break-words overflow-y-auto">
                     <p id="graphic-design-description">A creative graphic design portfolio showcases my artistic skills, design processes, and versatility. It shows highlighted key projects, such as branding, web design, illustrations, and digital content. Each piece is accompanied by a brief description explaining the concept, and tools used. The design of the portfolio itself reflects my personal style, while being clean, intuitive, and visually engaging, emphasizing typography, color schemes, and layout that align with my work.</p>
                   </CardFooter>
                 </Card>
-                <Card id="animation-services-card" className="border border-gray-400">
+                <Card id="animation-services-card" className="services-card border border-gray-400">
                   <CardHeader className="flex gap-3 justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -258,7 +258,7 @@ export default function Home() {
                     >
                       <g id="Layer_x0020_1">
                         <path
-                          fill="#5d75c1"
+                          fill="#d3d3ff"
                           fillRule="nonzero"
                           d="M7361 910c242 0 461 98 620 256 158 159 256 378 256 620s-98 461-256 620c-159 159-378 257-620 257s-461-98-620-257-257-378-257-620 98-461 257-620l6-6c159-155 375-250 614-250m447 429c-114-115-273-186-447-186-172 0-328 69-442 180l-6 6c-114 114-185 273-185 447 0 175 70 333 185 448 115 114 273 185 448 185 174 0 333-71 447-185 115-114 185-273 185-448 0-174-70-333-185-447m-5449 827c-67 0-122-54-122-122 0-67 55-121 122-121h1323c67 0 122 54 122 121 0 68-55 122-122 122zm-583 0c-68 0-122-54-122-122 0-67 54-121 122-121h231c68 0 122 54 122 121 0 68-54 122-122 122zm-160 3525c-68 0-122-55-122-122 0-68 54-122 122-122h1322c68 0 122 54 122 122 0 67-54 122-122 122zm-584 0c-67 0-122-55-122-122 0-68 55-122 122-122h232c67 0 122 54 122 122 0 67-55 122-122 122zm2302-1036c68 0 122 55 122 122s-54 122-122 122H2011c-67 0-121-55-121-122s54-122 121-122zm584 0c67 0 122 55 122 122s-55 122-122 122h-232c-67 0-122-55-122-122s55-122 122-122zM2436 2637c68 0 122 55 122 122s-54 122-122 122H1114c-68 0-122-55-122-122s54-122 122-122zm584 0c67 0 122 55 122 122s-55 122-122 122h-232c-67 0-122-55-122-122s55-122 122-122zm1550-154h1555c26 0 51 8 71 22 251 155 517 308 763 469 128 86 202 225 224 373 16 105 5 216-32 315l612 597h776c272 0 434 111 507 258 32 65 46 135 43 206-2 69-19 138-49 202-83 174-263 317-501 317H7350c-36 0-68-16-91-41l-679-664-510 755 816 808c26 26 38 61 36 95l39 2268c5 294-123 485-290 572-69 36-145 55-221 55-75 1-151-16-221-50-176-86-318-279-322-573l-25-1681-655-595-807 1012c-23 31-59 51-100 51H2533c-248 0-420-146-497-329-29-67-44-140-45-212-1-73 12-146 41-213 72-167 235-295 501-295h1299l664-875c-13-41-23-82-30-124-39-237 25-474 188-711l654-949-857-81-834 819c-125 123-297 129-442 62-53-25-103-60-146-103-42-44-77-96-100-154-60-152-39-339 138-514l887-874c84-83 174-138 278-173 99-32 209-45 338-45m1521 243H4570c-103 0-189 10-262 34-68 23-127 59-184 115l-886 874c-94 93-109 182-82 251 10 27 27 52 48 73 21 22 46 40 73 52 59 28 126 29 169-14l875-859c25-25 59-38 96-35l1118 106c21 2 42 9 60 22 55 38 69 113 31 169l-772 1120c-126 182-176 360-148 532 6 35 15 69 27 104 14 18 23 39 25 61 55 120 148 240 280 360l1047 950c24 22 39 53 39 89l26 1734c2 188 84 308 185 357 37 18 76 27 114 26 38 0 76-9 110-27 92-48 162-164 159-353l-38-2228-854-844c-40-41-48-106-15-155l1086-1606c42-71 58-164 45-251-13-84-52-162-119-207zm934 1153-306 454 681 665h1139c133 0 235-80 280-177 17-35 26-71 27-105 1-32-4-64-18-91-34-70-125-123-289-123h-825c-30 0-61-11-85-34zM5046 6027l-172-156c-107-97-193-196-259-297l-626 826c-24 31-60 48-97 48H2533c-152 0-241 65-277 148-16 36-23 75-22 114 0 40 9 82 26 120 41 100 136 180 273 180h1729z"
                         ></path>
@@ -272,11 +272,11 @@ export default function Home() {
                     <p id="animation-title" className="kumar-one-regular">Animation</p>
                   </CardBody>
                   <Divider />
-                  <CardFooter className="text-sm text-center p-4 break-words overflow-y-auto">
+                  <CardFooter className="card-footer text-sm text-center p-4 break-words overflow-y-auto">
                     <p id="animation-description">My animation work spans both 2D and 3D, creating dynamic and engaging visuals that bring ideas to life. In 2D animation, I focus on smooth, expressive motion and storytelling. while in 3D, I craft realistic, immersive animations with attention to detail and depth. From character animation to motion graphics, my work blends technical skill with creative vision, delivering animations that captivate and communicate effectively.</p>
                   </CardFooter>
                 </Card>
-                <Card id="threed-works-services-card" className="border border-gray-400">
+                <Card id="threed-works-services-card" className="services-card border border-gray-400">
                   <CardHeader className="flex gap-3 justify-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -293,7 +293,7 @@ export default function Home() {
                       viewBox="0 0 2213 2213"
                     >
                       <defs>
-                        <style>{".fil0{fill:#5d75c1;fill-rule:nonzero}"}</style>
+                        <style>{".fil0{fill:#d3d3ff;fill-rule:nonzero}"}</style>
                       </defs>
                       <g id="Layer_x0020_1">
                         <path
@@ -323,7 +323,7 @@ export default function Home() {
                     <p id="threed-works-title" className="kumar-one-regular">3D Design</p>
                   </CardBody>
                   <Divider />
-                  <CardFooter className="text-sm text-center p-4 break-words overflow-y-auto">
+                  <CardFooter className="card-footer text-sm text-center p-4 break-words overflow-y-auto">
                     <p id="threed-works-description">My 3D work focuses on creating detailed, immersive environments and models for a variety of applications, from product visualization to virtual experiences. I combine technical expertise with a keen eye for aesthetics, ensuring every model is both functional and visually captivating. In R&D, I explore new techniques, tools, and technologies to push the boundaries of design, experimenting with innovative approaches to solve complex visual and interactive challenges.</p>
                   </CardFooter>
                 </Card>
@@ -374,20 +374,14 @@ export default function Home() {
           overflow: hidden;
           margin: auto;
           width: 80vw;
-          height: 100vh;
           z-index: 1;
         }
         #intro {
           margin: 0 15% 0 15%;
+          padding: 10% 0 0 0;
         }
         #intro-content {
           overflow: hidden;
-          top: 0;
-          bottom: 0;
-          right: 0;
-          left: 0;
-          margin: auto;
-          position: absolute;
           width: 66vw;
           display: flex;
           flex-direction: row;
@@ -409,6 +403,7 @@ export default function Home() {
           filter: drop-shadow(5px 5px 5px #222);
         }
         #profile-photo:hover {
+          cursor: pointer;
           -webkit-transform: rotate(-5deg) scale(0.9);
           transform: rotate(-5deg) scale(0.9);
           transition: all .5s;
@@ -438,11 +433,6 @@ export default function Home() {
         #services-content {
           margin: 2% auto;
           overflow: hidden;
-          top: 0;
-          bottom: 0;
-          right: 0;
-          left: 0;
-          position: relative;
           width: 66vw;
           z-index: 1;
           text-align: center;
@@ -454,10 +444,6 @@ export default function Home() {
           flex-wrap: nowrap;
           justify-content: space-between;
           align-items: center;
-        }
-        #graphic-design-description, #animation-description, #threed-works-description {
-          display: table-header-group;
-          height: -webkit-fill-available;
         }
         footer {
           overflow: hidden;
@@ -487,7 +473,7 @@ export default function Home() {
         @media only screen and (max-width: 950px) {
           main {
             margin-bottom: 5%;
-            padding: 20% 0 0 0;
+            padding: 15% 0 0 0;
             width: 100%;
             height: auto;
           }
@@ -503,7 +489,6 @@ export default function Home() {
           }
           #intro-content {
             overflow: hidden;
-            position: relative;
             width: 100vw;
             display: flex;
             flex-direction: column;
@@ -541,11 +526,6 @@ export default function Home() {
           #services-content {
             margin: 3% auto;
             overflow: hidden;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            position: relative;
             width: 100vw;
             z-index: 1;
             text-align: center;

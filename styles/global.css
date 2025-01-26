@@ -100,11 +100,24 @@ nav {
   background-color: hsl(var(--nextui-background) / 0.1);
 }
 
-#graphic-design-services-card, #animation-services-card, #threed-works-services-card {
+.services-card {
   margin: auto 2% !important;
   width: 33%;
   max-height: 30rem;
   height: 25rem;
+}
+
+.services-card:hover {
+  cursor: pointer;
+  -webkit-transform: rotate(-5deg) scale(0.9);
+  transform: rotate(-5deg) scale(0.9);
+  transition: all .5s;
+  opacity: 0.8;
+}
+
+.card-footer {
+  display: block;
+  height: -webkit-fill-available;
 }
 
 @media only screen and (max-width: 950px) {
