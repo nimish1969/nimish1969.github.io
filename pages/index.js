@@ -1,16 +1,19 @@
 import React from "react";
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-import {Button} from "@nextui-org/react";
-import {FaFileArrowDown, FaEnvelope, FaGithub} from "react-icons/fa6";
+import { FaFileArrowDown, FaEnvelope, FaArrowsRotate, FaGithub } from "react-icons/fa6";
 import { useState, useEffect, useRef } from 'react';
 // import {useRouter} from 'next/router';
-import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image} from "@heroui/react";
+import { Textarea, Form, Input, Button, Card, CardHeader, CardBody, CardFooter, Divider } from "@heroui/react";
 
 // Dynamically import the ClientOnlyComponent with ssr: false
 const Navbar = dynamic(() => import('./navbar'), {
   ssr: false, // Ensures this component is only rendered on the client-side
 });
+
+// const Map = dynamic(() => import('./map.js'), {
+//   ssr: false,
+// });
 
 // Download Resume
 const downloadResume = () => {
@@ -24,6 +27,7 @@ const downloadResume = () => {
 };
 
 export default function Home() {
+  const [action, setAction] = React.useState(null);
   // const router = useRouter();
   const sectionRef = useRef(null);
   const sectionRef1 = useRef(null);
@@ -211,6 +215,7 @@ export default function Home() {
                 <Card id="graphic-design-services-card" className="services-card border border-gray-400">
                   <CardHeader className="flex gap-3 justify-center">
                     <svg
+                      id="graphic-design-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       xmlSpace="preserve"
                       width="145"
@@ -231,7 +236,6 @@ export default function Home() {
                         <path fill="none" d="M0 0h1515v1515H0z"></path>
                       </g>
                     </svg>
-                    {/* <img id="graphic-design-icon" title="Graphic Design" src="graphic-design-icon.svg" alt="Graphic Design Icon"/> */}
                   </CardHeader>
                   <Divider />
                   <CardBody className="text-center p-4 overflow-y-hidden">
@@ -245,6 +249,7 @@ export default function Home() {
                 <Card id="animation-services-card" className="services-card border border-gray-400">
                   <CardHeader className="flex gap-3 justify-center">
                     <svg
+                      id="animation-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       xmlSpace="preserve"
                       width="145"
@@ -265,7 +270,6 @@ export default function Home() {
                         <path fill="none" d="M0 0h10000v10000H0z"></path>
                       </g>
                     </svg>
-                    {/* <img id="animation-icon" title="Animation" src="animations-icon.svg" alt="Animation Icon"/> */}
                   </CardHeader>
                   <Divider />
                   <CardBody className="text-center p-4 overflow-y-hidden">
@@ -279,6 +283,7 @@ export default function Home() {
                 <Card id="threed-works-services-card" className="services-card border border-gray-400">
                   <CardHeader className="flex gap-3 justify-center">
                     <svg
+                      id="threed-works-icon"
                       xmlns="http://www.w3.org/2000/svg"
                       xmlSpace="preserve"
                       width={145}
@@ -316,7 +321,6 @@ export default function Home() {
                         />
                       </g>
                     </svg>
-                    {/* <img id="threed-works-icon" title="3D Works" src="3d-work-icon.svg" alt="3D Design Icon"/> */}
                   </CardHeader>
                   <Divider />
                   <CardBody className="text-center p-4 overflow-y-hidden">
@@ -335,9 +339,109 @@ export default function Home() {
             <p id="portfolio-title" className="kumar-one-regular title">Portfolio.</p>
           </section> */}
 
-          {/* <section id="contact" ref={sectionRef4}>
+          <section id="contact" ref={sectionRef4}>
             <p id="contact-title" className="kumar-one-regular title">Contact.</p>
-          </section> */}
+            <div id="contact-content">
+              <p>Get in touch to collaborate on bold and innovative digital graphic design that brings your vision to life.</p>
+              <div id="contact-details">
+                <div id="map-location-div">
+                  {/* <Map/> */}
+                  <iframe
+                      id="google-map-location"
+                      className="map"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.27542983864!2d73.1535135760009!3d22.30542084270851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc89851cd49cf%3A0x2b7d0ee77dd98db8!2sMinaxi%20Co-operative%20Housing%20Society!5e0!3m2!1sen!2sin!4v1737926983280!5m2!1sen!2sin"
+                      width="400"
+                      height="400"
+                      frameborder="0"
+                      style={{ border: 0 }}
+                      allowfullscreen=""
+                      aria-hidden="false"
+                      tabindex="0"
+                  />
+                </div>
+                <div id="contact-form-div">
+                  <Form
+                    id="contact-form"
+                    className="w-full max-w-xs flex flex-col gap-4"
+                    validationBehavior="native"
+                    onReset={() => setAction("reset")}
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      let data = Object.fromEntries(new FormData(e.currentTarget));
+
+                      // Reset form
+                      document.getElementById("contact-form").reset();
+
+                      // Send draft to email client
+                      const receiver_email = 'pauravshah1999@gmail.com';
+                      const subject = 'Re: Nimish Shah | Portfolio  - ' + data.subject + ' | ' + data.username + ' (' + data.email + ')';
+                      const body = data.message;
+
+                      const mailtoLink = `mailto:${receiver_email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                      window.location.href = mailtoLink;
+                    }}
+                  >
+                    <Input
+                      isRequired
+                      id="username"
+                      errorMessage="Please enter a valid name"
+                      label="Name"
+                      labelPlacement="inside"
+                      name="username"
+                      placeholder="Enter your name"
+                      maxLength={200}
+                      type="text"
+                    />
+
+                    <Input
+                      id="email"
+                      isRequired
+                      errorMessage="Please enter a valid email"
+                      label="Email"
+                      labelPlacement="inside"
+                      name="email"
+                      placeholder="Enter your email"
+                      maxLength={200}
+                      type="email"
+                    />
+
+                    <Input
+                      isRequired
+                      id="subject"
+                      errorMessage="Please enter a valid subject"
+                      label="Subject"
+                      labelPlacement="inside"
+                      name="subject"
+                      placeholder="Enter your subject"
+                      maxLength={200}
+                      type="text"
+                    />
+
+                    <Textarea
+                      isRequired
+                      id="message"
+                      errorMessage="Please enter a valid message"
+                      label="Message"
+                      labelPlacement="inside"
+                      name="message"
+                      placeholder="Enter your message"
+                      maxLength={400}
+                      type="text"
+                    />
+
+                    <div id="contact-form-btns-div" className="gap-2">
+                      <Button color="transperant" type="submit" className="bordered-btn">
+                        <FaEnvelope/>&nbsp;Send
+                      </Button>
+                      <Button color="transperant" type="reset" variant="flat" className="bordered-btn">
+                        <FaArrowsRotate/>&nbsp;Reset
+                      </Button>
+                    </div>
+                  </Form>
+                </div>
+              </div>
+            </div>
+          </section>
         </main>
 
         <footer id="portfolio-footer">
@@ -437,13 +541,57 @@ export default function Home() {
           z-index: 1;
           text-align: center;
         }
-        #my-services{
+        #my-services {
           padding: 5% 0 0 0;
           display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
           justify-content: space-between;
           align-items: center;
+        }
+        #contact {
+          padding: 0 0 5% 0;
+        }
+        #contact-content {
+          margin: 2% auto;
+          overflow: hidden;
+          width: 66vw;
+          z-index: 1;
+          text-align: center;
+        }
+        #contact-details {
+          margin: 5% 0 0 0;
+          overflow: hidden;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-items: center;
+          z-index: 1;
+        }
+        #map-location-div {
+          display: flex;
+          justify-content: end;
+          text-align: right;
+          padding: 0 3% 0 0;
+          width: 50%;
+        }
+        .map {
+          width: 25rem;
+          height: 25rem;
+          border-radius: 5%;
+        }
+        #contact-form-div {
+          display: flex;
+          justify-content: start;
+          text-align: left;
+          padding: 0 0 0 3%;
+          width: 50%;
+        }
+        #contact-form-btns-div {
+          display: flex;
+          justify-content: start;
+          width: -webkit-fill-available;
         }
         footer {
           overflow: hidden;
@@ -530,13 +678,49 @@ export default function Home() {
             z-index: 1;
             text-align: center;
           }
-          #my-services{
+          #my-services {
             padding: 5% 0 0 0;
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
             justify-content: space-between;
             align-items: center;
+          }
+          #contact-content {
+            margin: 2% auto;
+            overflow: hidden;
+            width: 100vw;
+            z-index: 1;
+            text-align: center;
+          }
+          #contact-details {
+            margin: 5% 0 0 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+          }
+          #map-location-div {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            padding: 0 0 5% 0;
+            width: 100vw;
+          }
+          #contact-form-div {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            padding: 5% 0 0 0;
+            width: 100vw;
+          }
+          #contact-form-btns-div {
+            display: flex;
+            justify-content: center;
+            width: -webkit-fill-available;
           }
         }
 

@@ -1,11 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {NextUIProvider} from "@nextui-org/react";
-import {useEffect} from 'react';
-import {Avatar} from "@nextui-org/react";
-import {FaLinkedin, FaInstagram, FaFacebook, FaBehance, FaDribbble, FaYoutube} from "react-icons/fa6";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, 
-  NavbarMenu, NavbarMenuItem, Link} from "@nextui-org/react";
+import { NextUIProvider } from "@nextui-org/react";
+import { useEffect } from 'react';
+import { Avatar, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, 
+  NavbarMenu, NavbarMenuItem, Link } from "@nextui-org/react";
+import { FaLinkedin, FaInstagram, FaFacebook, FaBehance, FaDribbble, FaYoutube } from "react-icons/fa6";
 
 export function Menu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
