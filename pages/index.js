@@ -1,10 +1,11 @@
 import React from "react";
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-import { FaFileArrowDown, FaEnvelope, FaArrowsRotate, FaGithub } from "react-icons/fa6";
+import { FaFileArrowDown, FaPaperPlane, FaEnvelope, FaArrowsRotate, FaGithub } from "react-icons/fa6";
 import { useState, useEffect, useRef } from 'react';
 // import {useRouter} from 'next/router';
-import { Textarea, Form, Input, Button, Card, CardHeader, CardBody, CardFooter, Divider } from "@heroui/react";
+import { Textarea, Form, Input, Button, Tabs, Tab, Card, CardHeader, CardBody, CardFooter, Divider, Image } from "@heroui/react";
+import SimpleImageSlider from "react-simple-image-slider";
 
 // Dynamically import the ClientOnlyComponent with ssr: false
 const Navbar = dynamic(() => import('./navbar'), {
@@ -159,6 +160,18 @@ export default function Home() {
     };
   }, []);
 
+  const images = [
+    { url: "https://heroui.com/images/hero-card-complete.jpeg" },
+    { url: "https://heroui.com/images/fruit-1.jpeg" },
+    { url: "https://heroui.com/images/fruit-2.jpeg" },
+    { url: "https://heroui.com/images/fruit-3.jpeg" },
+    { url: "https://heroui.com/images/fruit-4.jpeg" },
+    { url: "https://heroui.com/images/fruit-5.jpeg" },
+    { url: "https://heroui.com/images/fruit-6.jpeg" },
+    { url: "https://heroui.com/images/fruit-7.jpeg" },
+    { url: "https://heroui.com/images/fruit-8.jpeg" }
+  ];
+
   return (
     <div>
       <Head>
@@ -179,26 +192,31 @@ export default function Home() {
                 <img id="profile-photo" title="Nimish Shah" src="nimish_photo.png" alt="Nimish Shah Photo"/>
               </div>
               <div id="intro-div">
-                <p id="user-name" className="kumar-one-regular">Nimish Shah</p>
-                <p><i><span id="user-role">Graphic Design Specialist | Artist</span></i></p>
-                <br/>
-                <q id="design-quote"><i>Design is always a balanced combination of graphics and text, it looks good when arranged perfectly.</i></q>
-                <br/>
-                <br/>
-                <p>Hey there, welcome to my portfolio! I specialize in a wide range of creative work, including graphic design, 3D modeling, and with research &amp; development in visual arts.</p>
-                <br/>
-                <p>My portfolio highlights projects that blend technical precision with artistic vision, spanning from branding and digital content to immersive 3D environments. Each piece showcases a dedication to innovation, pushing the boundaries of design and technology to create visually compelling and functional outcomes.</p>
-                <br/>
-                <p>Kindly, go through my resume for more information and let me know if I'm the person that you might be looking for. Always looking forward to connect with creative minds.</p>
-                <br/>
-                <div id="intro-btns">
-                  <Button id="resume-btn" className="bordered-btn" title="Download Resume" color="primary" variant="bordered" onPress={downloadResume}>
-                    <FaFileArrowDown/>&nbsp;Resume
-                  </Button>
-                  <Button id="email-btn" className="bordered-btn" title="Email" color="primary" variant="bordered" as="a" target="_blank" href="mailto:shahnimish.1969@gmail.com">
-                    <FaEnvelope/>&nbsp;Send Message
-                  </Button>
-                </div>
+                <Card id="intro-card">
+                  <CardBody id="intro-card-body">
+                    <p id="user-name" className="kumar-one-regular">Nimish Shah</p>
+                    <p><i><span id="user-role">Graphic Design Specialist | Artist</span></i></p>
+                    <br/>
+                    <q id="design-quote"><i>Design is always a balanced combination of graphics and text, it looks good when arranged perfectly.</i></q>
+                    <br/>
+                    <p>Hey there, welcome to my portfolio! I specialize in a wide range of creative work, including graphic design, 3D modeling, and with research &amp; development in visual arts.</p>
+                    <br/>
+                    <p>My portfolio highlights projects that blend technical precision with artistic vision, spanning from branding and digital content to immersive 3D environments. Each piece showcases a dedication to innovation, pushing the boundaries of design and technology to create visually compelling and functional outcomes.</p>
+                    <br/>
+                    <p>Kindly, go through my resume for more information and let me know if I'm the person that you might be looking for. Always looking forward to connect with creative minds.</p>
+                    <br/>
+                  </CardBody>
+                  <CardFooter id="intro-card-footer">
+                    <div id="intro-btns">
+                      <Button id="resume-btn" className="bordered-btn" title="Download Resume" color="primary" variant="bordered" onPress={downloadResume}>
+                        <FaFileArrowDown/>&nbsp;Resume
+                      </Button>
+                      <Button id="email-btn" className="bordered-btn" title="Email" color="primary" variant="bordered" as="a" target="_blank" href="mailto:shahnimish.1969@gmail.com">
+                        <FaPaperPlane/>&nbsp;Message
+                      </Button>
+                    </div>
+                  </CardFooter>
+                </Card>
               </div>
             </div>
           </section>
@@ -335,9 +353,270 @@ export default function Home() {
             </div>
           </section>
 
-          {/* <section id="portfolio" ref={sectionRef3}>
+          <section id="portfolio" ref={sectionRef3}>
             <p id="portfolio-title" className="kumar-one-regular title">Portfolio.</p>
-          </section> */}
+            <div id="portfolio-content">
+              <p>My creative digital graphic work combines bold visuals with thoughtful design to communicate powerful messages. From branding and web design to digital illustrations, I focus on creating visually striking and functional designs that capture attention and convey meaning. Every project showcases my passion for innovation and attention to detail, delivering impactful results tailored to each client's needs.</p>
+              <div id="my-portfolio">
+                <div className="flex w-full flex-col">
+                  <Tabs aria-label="Options" className="flex justify-center" size="md" variant="solid">
+                    <Tab key="design" title="2D/3D Design">
+                      <Card className="py-4">
+                        <CardBody className="overflow-visible py-2 items-center">
+                          {/* <div className="slider-container">
+                            <SimpleImageSlider
+                              width={500}
+                              height={500}
+                              images={images}
+                              showBullets={true}
+                              showNavs={true}
+                              autoPlay={true}
+                              slideDuration={1}
+                            />
+                          </div> */}
+
+                          <div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
+                            <div>
+                              <h4 className="text-center">Frontend Radio</h4>
+                              <Image
+                                alt="Frontend Radio"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/hero-card-complete.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              <h4 className="text-center">Oranges</h4>
+                              <Image
+                                alt="Oranges"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/fruit-1.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              <h4 className="text-center">Tangerine</h4>
+                              <Image
+                                alt="Tangerine"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/fruit-2.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              <h4 className="text-center">Cherries</h4>
+                              <Image
+                                alt="Cherries"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/fruit-3.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </Tab>
+                    <Tab key="animation" title="2D Animation">
+                      <Card className="py-4">
+                        <CardBody className="overflow-visible py-2 items-center">
+                          {/* <div className="slider-container">
+                            <SimpleImageSlider
+                              width={500}
+                              height={500}
+                              images={images}
+                              showBullets={true}
+                              showNavs={true}
+                              autoPlay={true}
+                              slideDuration={1}
+                            />
+                          </div> */}
+
+                          <div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
+                            <div>
+                              <h4 className="text-center">Avocado</h4>
+                              <Image
+                                alt="Avocado"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/fruit-5.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              <h4 className="text-center">Lemon</h4>
+                              <Image
+                                alt="Lemon"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/fruit-6.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              <h4 className="text-center">Banana</h4>
+                              <Image
+                                alt="Banana"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/fruit-7.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              <h4 className="text-center">Watermelon</h4>
+                              <Image
+                                alt="Watermelon"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/fruit-8.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </Tab>
+                    <Tab key="cintascotch" title="Cintascotch">
+                      <Card className="py-4">
+                        <CardBody className="overflow-visible py-2 items-center">
+                          {/* <div className="slider-container">
+                            <SimpleImageSlider
+                              width={500}
+                              height={500}
+                              images={images}
+                              showBullets={true}
+                              showNavs={true}
+                              autoPlay={true}
+                              slideDuration={1}
+                            />
+                          </div> */}
+
+                          <div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
+                            <div>
+                              <h4 className="text-center">Frontend Radio</h4>
+                              <Image
+                                alt="Frontend Radio"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/hero-card-complete.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              <h4 className="text-center">Oranges</h4>
+                              <Image
+                                alt="Oranges"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/fruit-1.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              <h4 className="text-center">Tangerine</h4>
+                              <Image
+                                alt="Tangerine"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/fruit-2.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              <h4 className="text-center">Cherries</h4>
+                              <Image
+                                alt="Cherries"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/fruit-3.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </Tab>
+                    <Tab key="logo" title="Logo Design">
+                      <Card className="py-4">
+                        <CardBody className="overflow-visible py-2 items-center">
+                          {/* <div className="slider-container">
+                            <SimpleImageSlider
+                              width={500}
+                              height={500}
+                              images={images}
+                              showBullets={true}
+                              showNavs={true}
+                              autoPlay={true}
+                              slideDuration={1}
+                            />
+                          </div> */}
+
+<div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
+                            <div>
+                              <h4 className="text-center">Avocado</h4>
+                              <Image
+                                alt="Avocado"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/fruit-5.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              <h4 className="text-center">Lemon</h4>
+                              <Image
+                                alt="Lemon"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/fruit-6.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              <h4 className="text-center">Banana</h4>
+                              <Image
+                                alt="Banana"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/fruit-7.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              <h4 className="text-center">Watermelon</h4>
+                              <Image
+                                alt="Watermelon"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="https://heroui.com/images/fruit-8.jpeg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </Tab>
+                  </Tabs>
+                </div>
+              </div>
+            </div>
+          </section>
 
           <section id="contact" ref={sectionRef4}>
             <p id="contact-title" className="kumar-one-regular title">Contact.</p>
@@ -360,84 +639,88 @@ export default function Home() {
                   />
                 </div>
                 <div id="contact-form-div">
-                  <Form
-                    id="contact-form"
-                    className="w-full max-w-xs flex flex-col gap-4"
-                    validationBehavior="native"
-                    onReset={() => setAction("reset")}
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      let data = Object.fromEntries(new FormData(e.currentTarget));
+                  <Card id="contact-form-card">
+                    <CardBody id="contact-form-card-body">
+                      <Form
+                        id="contact-form"
+                        className="w-full max-w-xs flex flex-col gap-4"
+                        validationBehavior="native"
+                        onReset={() => setAction("reset")}
+                        onSubmit={(e) => {
+                          e.preventDefault();
+                          let data = Object.fromEntries(new FormData(e.currentTarget));
 
-                      // Reset form
-                      document.getElementById("contact-form").reset();
+                          // Reset form
+                          document.getElementById("contact-form").reset();
 
-                      // Send draft to email client
-                      const receiver_email = 'pauravshah1999@gmail.com';
-                      const subject = 'Re: Nimish Shah | Portfolio  - ' + data.subject + ' | ' + data.username + ' (' + data.email + ')';
-                      const body = data.message;
+                          // Send draft to email client
+                          const receiver_email = 'pauravshah1999@gmail.com';
+                          const subject = 'Re: Nimish Shah | Portfolio  - ' + data.subject + ' | ' + data.username + ' (' + data.email + ')';
+                          const body = data.message;
 
-                      const mailtoLink = `mailto:${receiver_email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                      window.location.href = mailtoLink;
-                    }}
-                  >
-                    <Input
-                      isRequired
-                      id="username"
-                      errorMessage="Please enter a valid name"
-                      label="Name"
-                      labelPlacement="inside"
-                      name="username"
-                      placeholder="Enter your name"
-                      maxLength={200}
-                      type="text"
-                    />
+                          const mailtoLink = `mailto:${receiver_email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                          window.location.href = mailtoLink;
+                        }}
+                      >
+                        <Input
+                          isRequired
+                          id="username"
+                          errorMessage="Please enter a valid name"
+                          label="Name"
+                          labelPlacement="inside"
+                          name="username"
+                          placeholder="Enter your name"
+                          maxLength={200}
+                          type="text"
+                        />
 
-                    <Input
-                      id="email"
-                      isRequired
-                      errorMessage="Please enter a valid email"
-                      label="Email"
-                      labelPlacement="inside"
-                      name="email"
-                      placeholder="Enter your email"
-                      maxLength={200}
-                      type="email"
-                    />
+                        <Input
+                          id="email"
+                          isRequired
+                          errorMessage="Please enter a valid email"
+                          label="Email"
+                          labelPlacement="inside"
+                          name="email"
+                          placeholder="Enter your email"
+                          maxLength={200}
+                          type="email"
+                        />
 
-                    <Input
-                      isRequired
-                      id="subject"
-                      errorMessage="Please enter a valid subject"
-                      label="Subject"
-                      labelPlacement="inside"
-                      name="subject"
-                      placeholder="Enter your subject"
-                      maxLength={200}
-                      type="text"
-                    />
+                        <Input
+                          isRequired
+                          id="subject"
+                          errorMessage="Please enter a valid subject"
+                          label="Subject"
+                          labelPlacement="inside"
+                          name="subject"
+                          placeholder="Enter your subject"
+                          maxLength={200}
+                          type="text"
+                        />
 
-                    <Textarea
-                      isRequired
-                      id="message"
-                      errorMessage="Please enter a valid message"
-                      label="Message"
-                      labelPlacement="inside"
-                      name="message"
-                      placeholder="Enter your message"
-                      maxLength={400}
-                      type="text"
-                    />
+                        <Textarea
+                          isRequired
+                          id="message"
+                          errorMessage="Please enter a valid message"
+                          label="Message"
+                          labelPlacement="inside"
+                          name="message"
+                          placeholder="Enter your message"
+                          maxLength={400}
+                          type="text"
+                        />
 
-                    <div id="contact-form-btns-div" className="gap-2">
-                      <Button color="transperant" type="submit" className="bordered-btn">
-                        <FaEnvelope/>&nbsp;Send
-                      </Button>
-                      <Button color="transperant" type="reset" variant="flat" className="bordered-btn">
-                        <FaArrowsRotate/>&nbsp;Reset
-                      </Button>
-                    </div>
-                  </Form>
+                        <div id="contact-form-btns-div" className="gap-2">
+                          <Button color="transperant" type="submit" className="bordered-btn">
+                            <FaEnvelope/>&nbsp;Send
+                          </Button>
+                          <Button color="transperant" type="reset" variant="flat" className="bordered-btn">
+                            <FaArrowsRotate/>&nbsp;Reset
+                          </Button>
+                        </div>
+                      </Form>
+                    </CardBody>
+                  </Card>
                 </div>
               </div>
             </div>
@@ -520,19 +803,12 @@ export default function Home() {
         }
         #user-name, .title {
           font-size: 2rem;
-          -webkit-filter: drop-shadow(5px 5px 5px #222 );
+          -webkit-filter: drop-shadow(5px 5px 5px #222);
           filter: drop-shadow(5px 5px 5px #222);
         }
         .title {
           margin: 10% 0 0 0;
           text-align: center;
-        }
-        #intro-btns {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: nowrap;
-          justify-content: left;
-          align-items: center;
         }
         #services-content {
           margin: 2% auto;
@@ -548,6 +824,23 @@ export default function Home() {
           flex-wrap: nowrap;
           justify-content: space-between;
           align-items: center;
+        }
+        #portfolio-content {
+          margin: 2% auto;
+          overflow: hidden;
+          width: 66vw;
+          z-index: 1;
+          text-align: center;
+        }
+        #my-portfolio {
+          margin-top: 5%;
+          text-align: center;
+        }
+        .slider-container {
+          position: relative;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         #contact {
           padding: 0 0 5% 0;
@@ -660,13 +953,6 @@ export default function Home() {
             padding: 5% 0 0 0;
             width: 100vw;
           }
-          #intro-btns {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
-          }
           .title {
             margin: 20% 0 0 0;
             text-align: center;
@@ -685,6 +971,29 @@ export default function Home() {
             flex-wrap: nowrap;
             justify-content: space-between;
             align-items: center;
+          }
+          #portfolio-content {
+            margin: 2% auto;
+            overflow: hidden;
+            width: 100vw;
+            z-index: 1;
+            text-align: center;
+          }
+          #my-portfolio {
+            margin-top: 10%;
+            text-align: center;
+          }
+          .slider-container {
+            width: 100%;
+            height: auto;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          }
+          .image-deck {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
           }
           #contact-content {
             margin: 2% auto;

@@ -91,6 +91,10 @@ nav {
   transition: all .5s;
 }
 
+#intro-card-footer {
+  justify-content: left;
+}
+
 #email-btn {
   margin-left: 10px;
 }
@@ -120,12 +124,43 @@ nav {
   height: -webkit-fill-available;
 }
 
+/* .rsis-image {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+} */
+
+#contact-form {
+  width: 20rem;
+  max-width: 25rem;
+}
+
 @media only screen and (max-width: 950px) {
+  #intro-card-body {
+    text-align: center;
+  }
+
+  #intro-card-footer {
+    justify-content: center;
+  }
+
   #graphic-design-services-card, #animation-services-card, #threed-works-services-card {
     margin: 2% auto !important;
     width: 100vh;
     max-height: 30rem;
     height: 25rem;
+  }
+  
+  /* .rsis-image {
+    width: 100% !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  } */
+
+  #contact-form {
+    width: 20rem;
+    max-width: 25rem;
   }
 }
 
