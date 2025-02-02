@@ -2,17 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumar+One&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
-  max-width: 100% !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 html,
 body {
-  scroll-behavior: smooth !important;
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
   font-family:
     Inter,
     -apple-system,
@@ -25,14 +25,14 @@ body {
     Fira Sans,
     Droid Sans,
     Helvetica Neue,
-    sans-serif !important;
+    sans-serif;
   color: white !important;
-  background: linear-gradient(#610365, #111778, #610365) !important;
+  background: linear-gradient(#610365, #111778, #610365);
 }
 
 a {
-  color: inherit !important;
-  text-decoration: none !important;
+  color: inherit;
+  text-decoration: none;
 }
 
 nav {
