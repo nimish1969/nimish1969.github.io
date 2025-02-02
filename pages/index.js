@@ -319,7 +319,7 @@ export default function Home() {
             <div id="services-content">
               <p>I create innovative work across creative graphic design, 2D and 3D animation, and advanced 3D projects, driven by research and development. My portfolio showcases everything from striking visual designs and engaging animations to experimental approaches with emerging tools and technologies. Each project highlights my commitment to combining artistic creativity with technical precision to craft distinctive and impactful results.</p>
               <div id="my-services">
-                <Card id="graphic-design-services-card" className="services-card border border-gray-400">
+                <Card id="graphic-design-services-card" className="services-card">
                   <CardHeader className="flex gap-3 justify-center">
                     <svg
                       id="graphic-design-icon"
@@ -353,7 +353,7 @@ export default function Home() {
                     <p id="graphic-design-description">A creative graphic design portfolio showcases my artistic skills, design processes, and versatility. It shows highlighted key projects, such as branding, web design, illustrations, and digital content. Each piece is accompanied by a brief description explaining the concept, and tools used. The design of the portfolio itself reflects my personal style, while being clean, intuitive, and visually engaging, emphasizing typography, color schemes, and layout that align with my work.</p>
                   </CardFooter>
                 </Card>
-                <Card id="animation-services-card" className="services-card border border-gray-400">
+                <Card id="animation-services-card" className="services-card">
                   <CardHeader className="flex gap-3 justify-center">
                     <svg
                       id="animation-icon"
@@ -387,7 +387,7 @@ export default function Home() {
                     <p id="animation-description">My animation work spans both 2D and 3D, creating dynamic and engaging visuals that bring ideas to life. In 2D animation, I focus on smooth, expressive motion and storytelling. while in 3D, I craft realistic, immersive animations with attention to detail and depth. From character animation to motion graphics, my work blends technical skill with creative vision, delivering animations that captivate and communicate effectively.</p>
                   </CardFooter>
                 </Card>
-                <Card id="threed-works-services-card" className="services-card border border-gray-400">
+                <Card id="threed-works-services-card" className="services-card">
                   <CardHeader className="flex gap-3 justify-center">
                     <svg
                       id="threed-works-icon"
@@ -448,8 +448,8 @@ export default function Home() {
               <p>My creative digital graphic work combines bold visuals with thoughtful design to communicate powerful messages. From branding and web design to digital illustrations, I focus on creating visually striking and functional designs that capture attention and convey meaning. Every project showcases my passion for innovation and attention to detail, delivering impactful results tailored to each client's needs.</p>
               <div id="my-portfolio">
                 <div className="flex w-full flex-col">
-                  <Tabs aria-label="Options" className="flex justify-center" size="md" variant="solid">
-                    <Tab key="design" title="2D/3D Design">
+                  <Tabs aria-label="Options" className="flex justify-center" size="md" color={"warning"} variant="light">
+                    <Tab key="design" title="2D/3D Design" className="tab-item">
                       <Card className="py-4">
                         <CardBody className="overflow-visible py-2 items-center">
                           {/* <div className="slider-container">
@@ -512,7 +512,7 @@ export default function Home() {
                         </CardBody>
                       </Card>
                     </Tab>
-                    <Tab key="animation" title="2D Animation">
+                    <Tab key="animation" title="2D Animation" className="tab-item">
                       <Card className="py-4">
                         <CardBody className="overflow-visible py-2 items-center">
                           {/* <div className="slider-container">
@@ -575,7 +575,7 @@ export default function Home() {
                         </CardBody>
                       </Card>
                     </Tab>
-                    <Tab key="cintascotch" title="Cintascotch">
+                    <Tab key="cintascotch" title="Cintascotch" className="tab-item">
                       <Card className="py-4">
                         <CardBody className="overflow-visible py-2 items-center">
                           {/* <div className="slider-container">
@@ -638,7 +638,7 @@ export default function Home() {
                         </CardBody>
                       </Card>
                     </Tab>
-                    <Tab key="logo" title="Logo Design">
+                    <Tab key="logo" title="Logo Design" className="tab-item">
                       <Card className="py-4">
                         <CardBody className="overflow-visible py-2 items-center">
                           {/* <div className="slider-container">
@@ -878,22 +878,23 @@ export default function Home() {
          -webkit-filter: drop-shadow(5px 5px 5px #222 );
           filter: drop-shadow(5px 5px 5px #222);
         }
-        #profile-photo:hover {
-          cursor: pointer;
-          -webkit-transform: rotate(-5deg) scale(0.9);
-          transform: rotate(-5deg) scale(0.9);
-          transition: all .5s;
-          opacity: 0.8;
-        }
+        // #profile-photo:hover {
+        //   cursor: pointer;
+        //   -webkit-transform: rotate(-5deg) scale(0.9);
+        //   transform: rotate(-5deg) scale(0.9);
+        //   transition: all .5s;
+        //   opacity: 0.8;
+        // }
         #intro-div {
           text-align: left;
           padding: 0 0 0 3%;
           width: 50%;
         }
         #user-name, .title {
+          color: #ffC31f;
           font-size: 2rem;
-          -webkit-filter: drop-shadow(5px 5px 5px #222);
-          filter: drop-shadow(5px 5px 5px #222);
+          // -webkit-filter: drop-shadow(5px 5px 5px #222);
+          // filter: drop-shadow(5px 5px 5px #222);
         }
         .title {
           margin: 10% 0 0 0;
@@ -913,13 +914,16 @@ export default function Home() {
         #education-title, #work-experience-title {
           padding: 2% 0 2% 0;
         }
-        .about-item:hover {
-          cursor: pointer;
-          -webkit-transform: scale(0.95);
-          transform: scale(0.95);
-          transition: all .5s;
-          opacity: 0.8;
+        .about-item {
+          border: 1px solid rgba(110, 58, 157, 1);
         }
+        // .about-item:hover {
+        //   cursor: pointer;
+        //   -webkit-transform: scale(0.95);
+        //   transform: scale(0.95);
+        //   transition: all .5s;
+        //   opacity: 0.8;
+        // }
         #services-content {
           margin: 2% auto;
           overflow: hidden;

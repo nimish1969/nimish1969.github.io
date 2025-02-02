@@ -64,7 +64,7 @@ export function Menu() {
             <FaFacebook/>
           </Link>
         </NavbarItem>
-        <NavbarItem>
+        {/* <NavbarItem>
           <Link color="foreground" title="Nimish Shah | Behance" target="_blank" href="javascript:void(0);">
             <FaBehance/>
           </Link>
@@ -73,12 +73,12 @@ export function Menu() {
           <Link color="foreground" title="Nimish Shah | Dribbble" target="_blank" href="javascript:void(0);">
             <FaDribbble/>
           </Link>
-        </NavbarItem>
-        {/* <NavbarItem>
+        </NavbarItem> */}
+        <NavbarItem>
           <Link color="foreground" title="Nimish Shah | YouTube" target="_blank" href="https://www.youtube.com/@Cre-Tech">
             <FaYoutube/>
           </Link>
-        </NavbarItem> */}
+        </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
         {/* {menuItems.map((item, index) => (

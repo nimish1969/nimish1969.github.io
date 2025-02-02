@@ -56,7 +56,7 @@ nav {
 }
 
 .bg-background\/70 {
-  background-color: hsl(var(--nextui-background) / 0.4) !important;
+  background-color: hsl(var(--nextui-background) / 0.2) !important;
 }
 
 .text-foreground {
@@ -71,6 +71,7 @@ nav {
 }
 
 #brand-logo {
+  color: #ffC31f !important;
   margin-top: 5px !important;
 }
 
@@ -128,6 +129,15 @@ nav {
   height: -webkit-fill-available !important;
 }
 
+.card-footer::-webkit-scrollbar {
+  width: 0 !important;
+  display: none; 
+}
+
+.tab-item > .text-default-500 {
+  color: white;
+}
+
 /* .rsis-image {
   background-size: cover !important;
   background-position: center !important;
@@ -163,7 +173,7 @@ nav {
   } */
 
   #contact-form {
-    width: 20rem !important;
+    width: 15rem !important;
     max-width: 25rem !important;
   }
 }
