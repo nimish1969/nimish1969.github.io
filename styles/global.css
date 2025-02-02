@@ -95,6 +95,10 @@ nav {
   justify-content: left;
 }
 
+#about-card {
+  margin-top: 3%;
+}
+
 #email-btn {
   margin-left: 10px;
 }

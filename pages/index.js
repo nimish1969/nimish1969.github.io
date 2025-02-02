@@ -4,8 +4,8 @@ import dynamic from 'next/dynamic';
 import { FaFileArrowDown, FaPaperPlane, FaEnvelope, FaArrowsRotate, FaGithub } from "react-icons/fa6";
 import { useState, useEffect, useRef } from 'react';
 // import {useRouter} from 'next/router';
+// import SimpleImageSlider from "react-simple-image-slider";
 import { Textarea, Form, Input, Button, Tabs, Tab, Card, CardHeader, CardBody, CardFooter, Divider, Image } from "@heroui/react";
-import SimpleImageSlider from "react-simple-image-slider";
 
 // Dynamically import the ClientOnlyComponent with ssr: false
 const Navbar = dynamic(() => import('./navbar'), {
@@ -160,17 +160,17 @@ export default function Home() {
     };
   }, []);
 
-  const images = [
-    { url: "https://heroui.com/images/hero-card-complete.jpeg" },
-    { url: "https://heroui.com/images/fruit-1.jpeg" },
-    { url: "https://heroui.com/images/fruit-2.jpeg" },
-    { url: "https://heroui.com/images/fruit-3.jpeg" },
-    { url: "https://heroui.com/images/fruit-4.jpeg" },
-    { url: "https://heroui.com/images/fruit-5.jpeg" },
-    { url: "https://heroui.com/images/fruit-6.jpeg" },
-    { url: "https://heroui.com/images/fruit-7.jpeg" },
-    { url: "https://heroui.com/images/fruit-8.jpeg" }
-  ];
+  // const images = [
+  //   { url: "https://heroui.com/images/hero-card-complete.jpeg" },
+  //   { url: "https://heroui.com/images/fruit-1.jpeg" },
+  //   { url: "https://heroui.com/images/fruit-2.jpeg" },
+  //   { url: "https://heroui.com/images/fruit-3.jpeg" },
+  //   { url: "https://heroui.com/images/fruit-4.jpeg" },
+  //   { url: "https://heroui.com/images/fruit-5.jpeg" },
+  //   { url: "https://heroui.com/images/fruit-6.jpeg" },
+  //   { url: "https://heroui.com/images/fruit-7.jpeg" },
+  //   { url: "https://heroui.com/images/fruit-8.jpeg" }
+  // ];
 
   return (
     <div>
@@ -196,15 +196,10 @@ export default function Home() {
                   <CardBody id="intro-card-body">
                     <p id="user-name" className="kumar-one-regular">Nimish Shah</p>
                     <p><i><span id="user-role">Graphic Design Specialist | Artist</span></i></p>
-                    <br/>
-                    <q id="design-quote"><i>Design is always a balanced combination of graphics and text, it looks good when arranged perfectly.</i></q>
-                    <br/>
-                    <p>Hey there, welcome to my portfolio! I specialize in a wide range of creative work, including graphic design, 3D modeling, and with research &amp; development in visual arts.</p>
-                    <br/>
-                    <p>My portfolio highlights projects that blend technical precision with artistic vision, spanning from branding and digital content to immersive 3D environments. Each piece showcases a dedication to innovation, pushing the boundaries of design and technology to create visually compelling and functional outcomes.</p>
-                    <br/>
-                    <p>Kindly, go through my resume for more information and let me know if I'm the person that you might be looking for. Always looking forward to connect with creative minds.</p>
-                    <br/>
+                    <q id="design-quote" className="mt-5"><i>Design is always a balanced combination of graphics and text, it looks good when arranged perfectly.</i></q>
+                    <p className="mt-5">Hey there, welcome to my portfolio! I specialize in a wide range of creative work, including graphic design, 3D modeling, and with research &amp; development in visual arts.</p>
+                    <p className="mt-5">My portfolio highlights projects that blend technical precision with artistic vision, spanning from branding and digital content to immersive 3D environments. Each piece showcases a dedication to innovation, pushing the boundaries of design and technology to create visually compelling and functional outcomes.</p>
+                    <p className="mt-5">Kindly, go through my resume for more information and let me know if I'm the person that you might be looking for. Always looking forward to connect with creative minds.</p>
                   </CardBody>
                   <CardFooter id="intro-card-footer">
                     <div id="intro-btns">
@@ -221,9 +216,103 @@ export default function Home() {
             </div>
           </section>
 
-          {/* <section id="about" ref={sectionRef1}>
+          <section id="about" ref={sectionRef1}>
             <p id="about-title" className="kumar-one-regular title">About.</p>
-          </section> */}
+            <div id="about-content">
+              <p>Let me take you through my magnificient journey so far...</p>
+              <Card id="about-card">
+                <CardBody>
+                  <div id="about-me" className="flex flex-row gap-6 justify-center align-center">
+                    <div id="education">
+                      <p id="education-title" className="kumar-one-regular text-center">Education</p>
+                      <div className="flex flex-col gap-4 justify-center align-center">
+                        <div className="about-item mt-5 p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">Sardar Patel University (SPU), Vallabh Vidyanagar</h4> 
+                          <p className="mt-1">B.Sc. (Physics)</p>
+                          <p className="mt-1">April 1987 - April 1990</p>
+                          <p className="mt-1">Grade: First</p>
+                        </div>
+
+                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">Vidyut Board Vidyalaya, Vadodara, Gujarat, India</h4>
+                          <p className="mt-1">XI-XII HSC, Science</p>
+                          <p className="mt-1">June 1985 - March 1987</p>
+                          <p className="mt-1">Grade: Grade Two</p>
+                        </div>
+
+                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">Vidyut Board Vidyalaya, Vadodara, Gujarat, India</h4>
+                          <p className="mt-1">X, SSC</p>
+                          <p className="mt-1">June 1984 - March 1985</p>
+                          <p className="mt-1">Grade: Grade One</p>
+                        </div>
+
+                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">Vidyut Board Vidyalaya, Vadodara, Gujarat, India</h4>
+                          <p className="mt-1">Primary &amp; Secondary Education</p>
+                          <p className="mt-1">June 1980 - March 1984</p>
+                        </div>
+
+                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">Zenith High School, Vadodara, Gujarat, India</h4>
+                          <p className="mt-1">Primary Education</p>
+                          <p className="mt-1">June 1975 - March 1980</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="work-experience">
+                      <p id="work-experience-title" className="kumar-one-regular text-center">Work Experience</p>
+                      <div className="flex flex-col gap-4 justify-center align-center">
+                        <div className="about-item mt-5 p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">Freelance Graphic Designer</h4>
+                          <p className="mt-1">Self-Employed . Full-time</p>
+                          <p className="mt-1">Vadodara, Gujarat, India . Remote</p>
+                          <p className="mt-1">August 2024 - Present</p>
+                        </div>
+
+                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">RIPL Technologies Pvt. Ltd.</h4>
+                          <p className="mt-1">Full-time</p>
+                          <p className="mt-1">Vadodara, Gujarat, India</p>
+
+                          <p className="mt-5">Graphic Design Manager</p>
+                          <p className="mt-1">April 2013 - August 2024</p>
+                          <p className="mt-1">Hybrid</p>
+
+                          <p className="mt-5">Senior Graphic Desiger</p>
+                          <p className="mt-1">April 2008 - March 2013</p>
+                          <p className="mt-1">On-site</p>
+                        </div>
+
+                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">Graphic Designer</h4>
+                          <p className="mt-1">Bapor Samachar (Daily Newspaper)</p>
+                          <p className="mt-1">Full-time</p>
+                          <p className="mt-1">Vadodara, Gujarat, India . On-site</p>
+                          <p className="mt-1">April 1998 - March 2008</p>
+                        </div>
+
+                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">Freelance Graphic Designer</h4>
+                          <p className="mt-1">Self-Employed . Full-time</p>
+                          <p className="mt-1">Vadodara, Gujarat, India . Remote</p>
+                          <p className="mt-1">April 1992 - March 1998</p>
+                        </div>
+
+                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">Programmer</h4>
+                          <p className="mt-1">Growmore Fertilizers</p>
+                          <p className="mt-1">Full-time</p>
+                          <p className="mt-1">Vadodara, Gujarat, India . On-site</p>
+                          <p className="mt-1">April 1991 - March 1992</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardBody>
+              </Card>
+            </div>
+          </section>
 
           <section id="services" ref={sectionRef2}>
             <p id="services-title" className="kumar-one-regular title">Services.</p>
@@ -564,7 +653,7 @@ export default function Home() {
                             />
                           </div> */}
 
-<div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
+                          <div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
                             <div>
                               <h4 className="text-center">Avocado</h4>
                               <Image
@@ -654,7 +743,7 @@ export default function Home() {
                           document.getElementById("contact-form").reset();
 
                           // Send draft to email client
-                          const receiver_email = 'pauravshah1999@gmail.com';
+                          const receiver_email = 'shahnimish.1969@gmail.com';
                           const subject = 'Re: Nimish Shah | Portfolio  - ' + data.subject + ' | ' + data.username + ' (' + data.email + ')';
                           const body = data.message;
 
@@ -735,7 +824,7 @@ export default function Home() {
           </Button>
           <br/>
           <br/>
-          <code>Made with ❤️ by 
+          <code>Crafted with ❤️ by 
             <a target="_blank" title="Paurav Shah | GitHub" href="https://github.com/paurav11">
               &nbsp;Paurav Shah
             </a>
@@ -810,6 +899,27 @@ export default function Home() {
           margin: 10% 0 0 0;
           text-align: center;
         }
+        #about-content {
+          margin: 2% auto;
+          overflow: hidden;
+          width: 66vw;
+          z-index: 1;
+          text-align: center;
+        }
+        #education, #work-experience {
+          width: 50%;
+          text-align: left;
+        }
+        #education-title, #work-experience-title {
+          padding: 2% 0 2% 0;
+        }
+        .about-item:hover {
+          cursor: pointer;
+          -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+          transition: all .5s;
+          opacity: 0.8;
+        }
         #services-content {
           margin: 2% auto;
           overflow: hidden;
@@ -836,12 +946,12 @@ export default function Home() {
           margin-top: 5%;
           text-align: center;
         }
-        .slider-container {
-          position: relative;
-          border-radius: 10px;
-          overflow: hidden;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+        // .slider-container {
+        //   position: relative;
+        //   border-radius: 10px;
+        //   overflow: hidden;
+        //   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        // }
         #contact {
           padding: 0 0 5% 0;
         }
@@ -956,6 +1066,24 @@ export default function Home() {
           .title {
             margin: 20% 0 0 0;
             text-align: center;
+          }
+          #about-content {
+            margin: 2% auto;
+            overflow: hidden;
+            width: 100vw;
+            z-index: 1;
+            text-align: center;
+          }
+          #education, #work-experience {
+            width: 100%;
+            text-align: center;
+          }
+          #about-me {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
           }
           #services-content {
             margin: 3% auto;
