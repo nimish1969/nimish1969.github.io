@@ -2,17 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumar+One&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  max-width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  max-width: 100% !important;
 }
 
 html,
 body {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-  overflow-y: auto;
+  scroll-behavior: smooth !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
   font-family:
     Inter,
     -apple-system,
@@ -25,14 +25,14 @@ body {
     Fira Sans,
     Droid Sans,
     Helvetica Neue,
-    sans-serif;
+    sans-serif !important;
   color: white !important;
-  background: linear-gradient(#610365, #111778, #610365);
+  background: linear-gradient(#610365, #111778, #610365) !important;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: inherit !important;
+  text-decoration: none !important;
 }
 
 nav {
@@ -48,11 +48,11 @@ nav {
 }
 
 #brand-logo-section {
-  margin-left: 5%;
+  margin-left: 5% !important;
 }
 
 #brand-social-section {
-  margin-right: 5%;
+  margin-right: 5% !important;
 }
 
 .bg-background\/70 {
@@ -65,18 +65,18 @@ nav {
 }
 
 .kumar-one-regular {
-  font-family: "Kumar One", serif;
+  font-family: "Kumar One", serif !important;
   font-weight: 400 !important;
-  font-style: normal;
+  font-style: normal !important;
 }
 
 #brand-logo {
-  margin-top: 5px;
+  margin-top: 5px !important;
 }
 
 .activeItem {
-  font-style: italic;
-  font-weight: 600;
+  font-style: italic !important;
+  font-weight: 600 !important;
 }
 
 .bordered-btn {
@@ -92,15 +92,15 @@ nav {
 }
 
 #intro-card-footer {
-  justify-content: left;
+  justify-content: left !important;
 }
 
 #about-card {
-  margin-top: 3%;
+  margin-top: 3% !important;
 }
 
 #email-btn {
-  margin-left: 10px;
+  margin-left: 10px !important;
 }
 
 .bg-content1 {
@@ -110,22 +110,22 @@ nav {
 
 .services-card {
   margin: auto 2% !important;
-  width: 33%;
-  max-height: 30rem;
-  height: 25rem;
+  width: 33% !important;
+  max-height: 30rem !important;
+  height: 25rem !important;
 }
 
 .services-card:hover {
-  cursor: pointer;
-  -webkit-transform: rotate(-5deg) scale(0.9);
-  transform: rotate(-5deg) scale(0.9);
-  transition: all .5s;
-  opacity: 0.8;
+  cursor: pointer !important;
+  -webkit-transform: rotate(-5deg) scale(0.9) !important;
+  transform: rotate(-5deg) scale(0.9) !important;
+  transition: all .5s !important;
+  opacity: 0.8 !important;
 }
 
 .card-footer {
-  display: block;
-  height: -webkit-fill-available;
+  display: block !important;
+  height: -webkit-fill-available !important;
 }
 
 /* .rsis-image {
@@ -135,24 +135,24 @@ nav {
 } */
 
 #contact-form {
-  width: 20rem;
-  max-width: 25rem;
+  width: 20rem !important;
+  max-width: 25rem !important;
 }
 
 @media only screen and (max-width: 950px) {
   #intro-card-body {
-    text-align: center;
+    text-align: center !important;
   }
 
   #intro-card-footer {
-    justify-content: center;
+    justify-content: center !important;
   }
 
   #graphic-design-services-card, #animation-services-card, #threed-works-services-card {
     margin: 2% auto !important;
-    width: 100vh;
-    max-height: 30rem;
-    height: 25rem;
+    width: 100vh !important;
+    max-height: 30rem !important;
+    height: 25rem !important;
   }
   
   /* .rsis-image {
@@ -163,8 +163,8 @@ nav {
   } */
 
   #contact-form {
-    width: 20rem;
-    max-width: 25rem;
+    width: 20rem !important;
+    max-width: 25rem !important;
   }
 }
 
