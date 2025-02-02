@@ -56,7 +56,7 @@ nav {
 }
 
 .bg-background\/70 {
-  background-color: hsl(var(--nextui-background) / 0.4);
+  background-color: hsl(var(--nextui-background) / 0.4) !important;
 }
 
 .text-foreground {
