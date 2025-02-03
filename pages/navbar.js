@@ -1,3 +1,10 @@
+/**
+ * Author: Paurav Shah
+ * Date: 2025-02-03
+ * Version: 1.0.0
+ * License: MIT
+ */
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { NextUIProvider } from "@nextui-org/react";
@@ -17,7 +24,7 @@ export function Menu() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <Avatar size="sm" title="Nimish" color="default" src="./Nimish_Profile_Cutout.png"/>
+          <Avatar size="sm" title="Nimish" color="default" src="./nimish_profile_photo.png"/>
           &nbsp;&nbsp;
           <Link id="brand-logo" className="kumar-one-regular" title="Nimish" color="foreground" href="#">
             Nimish
@@ -65,12 +72,12 @@ export function Menu() {
           </Link>
         </NavbarItem>
         {/* <NavbarItem>
-          <Link color="foreground" title="Nimish Shah | Behance" target="_blank" href="javascript:void(0);">
+          <Link color="foreground" title="Nimish Shah | Behance" target="_blank" href="https://www.behance.net/nimishshah">
             <FaBehance/>
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" title="Nimish Shah | Dribbble" target="_blank" href="javascript:void(0);">
+          <Link color="foreground" title="Nimish Shah | Dribbble" target="_blank" href="https://dribbble.com/nimishshah">
             <FaDribbble/>
           </Link>
         </NavbarItem> */}
