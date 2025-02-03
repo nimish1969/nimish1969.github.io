@@ -1,27 +1,29 @@
+/**
+ * Author: Paurav Shah
+ * Date: 2025-02-03
+ * Version: 1.0.0
+ * License: MIT
+ */
+
 import React from "react";
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { FaFileArrowDown, FaPaperPlane, FaEnvelope, FaArrowsRotate, FaGithub } from "react-icons/fa6";
 import { useState, useEffect, useRef } from 'react';
-// import {useRouter} from 'next/router';
-// import SimpleImageSlider from "react-simple-image-slider";
 import { Textarea, Form, Input, Button, Tabs, Tab, Card, CardHeader, CardBody, CardFooter, Divider, Image } from "@heroui/react";
+// import {useRouter} from 'next/router';
 
 // Dynamically import the ClientOnlyComponent with ssr: false
 const Navbar = dynamic(() => import('./navbar'), {
   ssr: false, // Ensures this component is only rendered on the client-side
 });
 
-// const Map = dynamic(() => import('./map.js'), {
-//   ssr: false,
-// });
-
 // Download Resume
 const downloadResume = () => {
-  const pdfUrl = "Resume-Nimish_Shah_2024.pdf";
+  const pdfUrl = "Resume-Nimish_Shah.pdf";
   const link = document.createElement("a");
   link.href = pdfUrl;
-  link.download = "Resume-Nimish_Shah_2024.pdf"; // specify the filename
+  link.download = "Resume-Nimish_Shah.pdf"; // specify the filename
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -159,18 +161,6 @@ export default function Home() {
       }
     };
   }, []);
-
-  // const images = [
-  //   { url: "https://heroui.com/images/hero-card-complete.jpeg" },
-  //   { url: "https://heroui.com/images/fruit-1.jpeg" },
-  //   { url: "https://heroui.com/images/fruit-2.jpeg" },
-  //   { url: "https://heroui.com/images/fruit-3.jpeg" },
-  //   { url: "https://heroui.com/images/fruit-4.jpeg" },
-  //   { url: "https://heroui.com/images/fruit-5.jpeg" },
-  //   { url: "https://heroui.com/images/fruit-6.jpeg" },
-  //   { url: "https://heroui.com/images/fruit-7.jpeg" },
-  //   { url: "https://heroui.com/images/fruit-8.jpeg" }
-  // ];
 
   return (
     <div>
@@ -449,124 +439,49 @@ export default function Home() {
               <div id="my-portfolio">
                 <div className="flex w-full flex-col">
                   <Tabs aria-label="Options" className="flex justify-center" size="md" color={"warning"} variant="light">
-                    <Tab key="design" title="2D/3D Design" className="tab-item">
+                    <Tab key="design" title="3D Design" className="tab-item">
                       <Card className="py-4">
                         <CardBody className="overflow-visible py-2 items-center">
-                          {/* <div className="slider-container">
-                            <SimpleImageSlider
-                              width={500}
-                              height={500}
-                              images={images}
-                              showBullets={true}
-                              showNavs={true}
-                              autoPlay={true}
-                              slideDuration={1}
-                            />
-                          </div> */}
-
                           <div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
                             <div>
-                              <h4 className="text-center">Frontend Radio</h4>
+                              {/* <h4 className="text-center">Character 1</h4> */}
                               <Image
-                                alt="Frontend Radio"
+                                alt="Character 1"
                                 className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/hero-card-complete.jpeg"
+                                src="./portfolio_images/3d_characters/character_1.jpg"
                                 width="500rem"
                                 height="25rem"
                               />
                             </div>
 
                             <div>
-                              <h4 className="text-center">Oranges</h4>
+                              {/* <h4 className="text-center">Character 2</h4> */}
                               <Image
-                                alt="Oranges"
+                                alt="Character 2"
                                 className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/fruit-1.jpeg"
+                                src="./portfolio_images/3d_characters/character_2.jpg"
                                 width="500rem"
                                 height="25rem"
                               />
                             </div>
 
                             <div>
-                              <h4 className="text-center">Tangerine</h4>
+                              {/* <h4 className="text-center">Character 3</h4> */}
                               <Image
-                                alt="Tangerine"
+                                alt="Character 3"
                                 className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/fruit-2.jpeg"
+                                src="./portfolio_images/3d_characters/character_3.jpg"
                                 width="500rem"
                                 height="25rem"
                               />
                             </div>
 
                             <div>
-                              <h4 className="text-center">Cherries</h4>
+                              {/* <h4 className="text-center">Character 4</h4> */}
                               <Image
-                                alt="Cherries"
+                                alt="Character 4"
                                 className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/fruit-3.jpeg"
-                                width="500rem"
-                                height="25rem"
-                              />
-                            </div>
-                          </div>
-                        </CardBody>
-                      </Card>
-                    </Tab>
-                    <Tab key="animation" title="2D Animation" className="tab-item">
-                      <Card className="py-4">
-                        <CardBody className="overflow-visible py-2 items-center">
-                          {/* <div className="slider-container">
-                            <SimpleImageSlider
-                              width={500}
-                              height={500}
-                              images={images}
-                              showBullets={true}
-                              showNavs={true}
-                              autoPlay={true}
-                              slideDuration={1}
-                            />
-                          </div> */}
-
-                          <div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
-                            <div>
-                              <h4 className="text-center">Avocado</h4>
-                              <Image
-                                alt="Avocado"
-                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/fruit-5.jpeg"
-                                width="500rem"
-                                height="25rem"
-                              />
-                            </div>
-
-                            <div>
-                              <h4 className="text-center">Lemon</h4>
-                              <Image
-                                alt="Lemon"
-                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/fruit-6.jpeg"
-                                width="500rem"
-                                height="25rem"
-                              />
-                            </div>
-
-                            <div>
-                              <h4 className="text-center">Banana</h4>
-                              <Image
-                                alt="Banana"
-                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/fruit-7.jpeg"
-                                width="500rem"
-                                height="25rem"
-                              />
-                            </div>
-
-                            <div>
-                              <h4 className="text-center">Watermelon</h4>
-                              <Image
-                                alt="Watermelon"
-                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/fruit-8.jpeg"
+                                src="./portfolio_images/3d_characters/character_4.jpg"
                                 width="500rem"
                                 height="25rem"
                               />
@@ -578,58 +493,46 @@ export default function Home() {
                     <Tab key="cintascotch" title="Cintascotch" className="tab-item">
                       <Card className="py-4">
                         <CardBody className="overflow-visible py-2 items-center">
-                          {/* <div className="slider-container">
-                            <SimpleImageSlider
-                              width={500}
-                              height={500}
-                              images={images}
-                              showBullets={true}
-                              showNavs={true}
-                              autoPlay={true}
-                              slideDuration={1}
-                            />
-                          </div> */}
-
                           <div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
                             <div>
-                              <h4 className="text-center">Frontend Radio</h4>
+                              {/* <h4 className="text-center">Cintascotch 1</h4> */}
                               <Image
-                                alt="Frontend Radio"
+                                alt="Cintascotch 1"
                                 className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/hero-card-complete.jpeg"
+                                src="./portfolio_images/cintascotch/cinta_1.jpg"
                                 width="500rem"
                                 height="25rem"
                               />
                             </div>
 
                             <div>
-                              <h4 className="text-center">Oranges</h4>
+                              {/* <h4 className="text-center">Cintascotch 2</h4> */}
                               <Image
-                                alt="Oranges"
+                                alt="Cintascotch 2"
                                 className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/fruit-1.jpeg"
+                                src="./portfolio_images/cintascotch/cinta_2.jpg"
                                 width="500rem"
                                 height="25rem"
                               />
                             </div>
 
                             <div>
-                              <h4 className="text-center">Tangerine</h4>
+                              {/* <h4 className="text-center">Cintascotch 3</h4> */}
                               <Image
-                                alt="Tangerine"
+                                alt="Cintascotch 3"
                                 className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/fruit-2.jpeg"
+                                src="./portfolio_images/cintascotch/cinta_3.jpg"
                                 width="500rem"
                                 height="25rem"
                               />
                             </div>
 
                             <div>
-                              <h4 className="text-center">Cherries</h4>
+                              {/* <h4 className="text-center">Cintascotch 4</h4> */}
                               <Image
-                                alt="Cherries"
+                                alt="Cintascotch 4"
                                 className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/fruit-3.jpeg"
+                                src="./portfolio_images/cintascotch/cinta_4.jpg"
                                 width="500rem"
                                 height="25rem"
                               />
@@ -641,58 +544,97 @@ export default function Home() {
                     <Tab key="logo" title="Logo Design" className="tab-item">
                       <Card className="py-4">
                         <CardBody className="overflow-visible py-2 items-center">
-                          {/* <div className="slider-container">
-                            <SimpleImageSlider
-                              width={500}
-                              height={500}
-                              images={images}
-                              showBullets={true}
-                              showNavs={true}
-                              autoPlay={true}
-                              slideDuration={1}
-                            />
-                          </div> */}
-
                           <div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
                             <div>
-                              <h4 className="text-center">Avocado</h4>
+                              {/* <h4 className="text-center">Logo 1</h4> */}
                               <Image
-                                alt="Avocado"
+                                alt="Logo 1"
                                 className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/fruit-5.jpeg"
+                                src="./portfolio_images/logo_design/logo_1.jpg"
                                 width="500rem"
                                 height="25rem"
                               />
                             </div>
 
                             <div>
-                              <h4 className="text-center">Lemon</h4>
+                              {/* <h4 className="text-center">Logo 2</h4> */}
                               <Image
-                                alt="Lemon"
+                                alt="Logo 2"
                                 className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/fruit-6.jpeg"
+                                src="./portfolio_images/logo_design/logo_2.jpg"
                                 width="500rem"
                                 height="25rem"
                               />
                             </div>
 
                             <div>
-                              <h4 className="text-center">Banana</h4>
+                              {/* <h4 className="text-center">Logo 3</h4> */}
                               <Image
-                                alt="Banana"
+                                alt="Logo 3"
                                 className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/fruit-7.jpeg"
+                                src="./portfolio_images/logo_design/logo_3.jpg"
                                 width="500rem"
                                 height="25rem"
                               />
                             </div>
 
                             <div>
-                              <h4 className="text-center">Watermelon</h4>
+                              {/* <h4 className="text-center">Logo 4</h4> */}
                               <Image
-                                alt="Watermelon"
+                                alt="Logo 4"
                                 className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="https://heroui.com/images/fruit-8.jpeg"
+                                src="./portfolio_images/logo_design/logo_4.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </Tab>
+                    <Tab key="sketches" title="Sketches" className="tab-item">
+                      <Card className="py-4">
+                        <CardBody className="overflow-visible py-2 items-center">
+                          <div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
+                            <div>
+                              {/* <h4 className="text-center">Sketch 1</h4> */}
+                              <Image
+                                alt="Sketch 1"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/sketches/sketch_1.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Sketch 2</h4> */}
+                              <Image
+                                alt="Sketch 2"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/sketches/sketch_2.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Sketch 3</h4> */}
+                              <Image
+                                alt="Sketch 3"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/sketches/sketch_3.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Sketch 4</h4> */}
+                              <Image
+                                alt="Sketch 4"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/sketches/sketch_4.jpg"
                                 width="500rem"
                                 height="25rem"
                               />
@@ -713,7 +655,6 @@ export default function Home() {
               <p>Get in touch to collaborate on bold and innovative digital graphic design that brings your vision to life.</p>
               <div id="contact-details">
                 <div id="map-location-div">
-                  {/* <Map/> */}
                   <iframe
                       id="google-map-location"
                       className="map"
@@ -745,7 +686,7 @@ export default function Home() {
                           // Send draft to email client
                           const receiver_email = 'shahnimish.1969@gmail.com';
                           const subject = 'Re: Nimish Shah | Portfolio  - ' + data.subject + ' | ' + data.username + ' (' + data.email + ')';
-                          const body = data.message;
+                          const body = 'Hi Nimish,\n\n' + data.message + '\n\nRegards,\n\n' + data.username;
 
                           const mailtoLink = `mailto:${receiver_email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                           window.location.href = mailtoLink;
@@ -912,6 +853,7 @@ export default function Home() {
           text-align: left;
         }
         #education-title, #work-experience-title {
+          color: #ffC31f;
           padding: 2% 0 2% 0;
         }
         .about-item {
