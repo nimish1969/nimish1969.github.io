@@ -111,7 +111,7 @@ export default function Home() {
         });
       },
       {
-        threshold: 0.5, // 50% of the section should be in the viewport to consider it visible
+        threshold: 0.25, // 25% of the section should be in the viewport to consider it visible
       }
     );
 
@@ -213,43 +213,6 @@ export default function Home() {
               <Card id="about-card">
                 <CardBody>
                   <div id="about-me" className="flex flex-row gap-6 justify-center align-center">
-                    <div id="education">
-                      <p id="education-title" className="kumar-one-regular text-center">Education</p>
-                      <div className="flex flex-col gap-4 justify-center align-center">
-                        <div className="about-item mt-5 p-4 border border-white-400 rounded-[10px]">
-                          <h4 className="italic">Sardar Patel University (SPU), Vallabh Vidyanagar</h4> 
-                          <p className="mt-1">B.Sc. (Physics)</p>
-                          <p className="mt-1">April 1987 - April 1990</p>
-                          <p className="mt-1">Grade: First</p>
-                        </div>
-
-                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
-                          <h4 className="italic">Vidyut Board Vidyalaya, Vadodara, Gujarat, India</h4>
-                          <p className="mt-1">XI-XII HSC, Science</p>
-                          <p className="mt-1">June 1985 - March 1987</p>
-                          <p className="mt-1">Grade: Grade Two</p>
-                        </div>
-
-                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
-                          <h4 className="italic">Vidyut Board Vidyalaya, Vadodara, Gujarat, India</h4>
-                          <p className="mt-1">X, SSC</p>
-                          <p className="mt-1">June 1984 - March 1985</p>
-                          <p className="mt-1">Grade: Grade One</p>
-                        </div>
-
-                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
-                          <h4 className="italic">Vidyut Board Vidyalaya, Vadodara, Gujarat, India</h4>
-                          <p className="mt-1">Primary &amp; Secondary Education</p>
-                          <p className="mt-1">June 1980 - March 1984</p>
-                        </div>
-
-                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
-                          <h4 className="italic">Zenith High School, Vadodara, Gujarat, India</h4>
-                          <p className="mt-1">Primary Education</p>
-                          <p className="mt-1">June 1975 - March 1980</p>
-                        </div>
-                      </div>
-                    </div>
                     <div id="work-experience">
                       <p id="work-experience-title" className="kumar-one-regular text-center">Work Experience</p>
                       <div className="flex flex-col gap-4 justify-center align-center">
@@ -295,6 +258,43 @@ export default function Home() {
                           <p className="mt-1">Full-time</p>
                           <p className="mt-1">Vadodara, Gujarat, India . On-site</p>
                           <p className="mt-1">April 1991 - March 1992</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="education">
+                      <p id="education-title" className="kumar-one-regular text-center">Education</p>
+                      <div className="flex flex-col gap-4 justify-center align-center">
+                        <div className="about-item mt-5 p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">Sardar Patel University (SPU), Vallabh Vidyanagar</h4> 
+                          <p className="mt-1">B.Sc. (Physics)</p>
+                          <p className="mt-1">April 1987 - April 1990</p>
+                          <p className="mt-1">Grade: First</p>
+                        </div>
+
+                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">Vidyut Board Vidyalaya, Vadodara, Gujarat, India</h4>
+                          <p className="mt-1">XI-XII HSC, Science</p>
+                          <p className="mt-1">June 1985 - March 1987</p>
+                          <p className="mt-1">Grade: Grade Two</p>
+                        </div>
+
+                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">Vidyut Board Vidyalaya, Vadodara, Gujarat, India</h4>
+                          <p className="mt-1">X, SSC</p>
+                          <p className="mt-1">June 1984 - March 1985</p>
+                          <p className="mt-1">Grade: Grade One</p>
+                        </div>
+
+                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">Vidyut Board Vidyalaya, Vadodara, Gujarat, India</h4>
+                          <p className="mt-1">Primary &amp; Secondary Education</p>
+                          <p className="mt-1">June 1980 - March 1984</p>
+                        </div>
+
+                        <div className="about-item p-4 border border-white-400 rounded-[10px]">
+                          <h4 className="italic">Zenith High School, Vadodara, Gujarat, India</h4>
+                          <p className="mt-1">Primary Education</p>
+                          <p className="mt-1">June 1975 - March 1980</p>
                         </div>
                       </div>
                     </div>
@@ -439,6 +439,108 @@ export default function Home() {
               <div id="my-portfolio">
                 <div className="flex w-full flex-col">
                   <Tabs aria-label="Options" className="flex justify-center" size="md" color={"warning"} variant="light">
+                    <Tab key="vector" title="Vector Design" className="tab-item">
+                      <Card className="py-4">
+                        <CardBody className="overflow-visible py-2 items-center">
+                          <div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
+                            <div>
+                              {/* <h4 className="text-center">Vector 1</h4> */}
+                              <Image
+                                alt="Vector 1"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/vector_design/vector_1.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Vector 2</h4> */}
+                              <Image
+                                alt="Vector 2"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/vector_design/vector_2.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Vector 3</h4> */}
+                              <Image
+                                alt="Vector 3"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/vector_design/vector_3.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Vector 4</h4> */}
+                              <Image
+                                alt="Vector 4"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/vector_design/vector_4.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </Tab>
+                    <Tab key="illustration" title="Vector Illustrations" className="tab-item">
+                      <Card className="py-4">
+                        <CardBody className="overflow-visible py-2 items-center">
+                          <div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
+                            <div>
+                              {/* <h4 className="text-center">Illustration 1</h4> */}
+                              <Image
+                                alt="Illustration 1"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/illustrations/illustration_1.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Illustration 2</h4> */}
+                              <Image
+                                alt="Illustration 2"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/illustrations/illustration_2.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Illustration 3</h4> */}
+                              <Image
+                                alt="Illustration 3"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/illustrations/illustration_3.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Illustration 4</h4> */}
+                              <Image
+                                alt="Illustration 4"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/illustrations/illustration_4.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </Tab>
                     <Tab key="design" title="3D Design" className="tab-item">
                       <Card className="py-4">
                         <CardBody className="overflow-visible py-2 items-center">
@@ -482,57 +584,6 @@ export default function Home() {
                                 alt="Character 4"
                                 className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
                                 src="./portfolio_images/3d_characters/character_4.jpg"
-                                width="500rem"
-                                height="25rem"
-                              />
-                            </div>
-                          </div>
-                        </CardBody>
-                      </Card>
-                    </Tab>
-                    <Tab key="cintascotch" title="Cintascotch" className="tab-item">
-                      <Card className="py-4">
-                        <CardBody className="overflow-visible py-2 items-center">
-                          <div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
-                            <div>
-                              {/* <h4 className="text-center">Cintascotch 1</h4> */}
-                              <Image
-                                alt="Cintascotch 1"
-                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="./portfolio_images/cintascotch/cinta_1.jpg"
-                                width="500rem"
-                                height="25rem"
-                              />
-                            </div>
-
-                            <div>
-                              {/* <h4 className="text-center">Cintascotch 2</h4> */}
-                              <Image
-                                alt="Cintascotch 2"
-                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="./portfolio_images/cintascotch/cinta_2.jpg"
-                                width="500rem"
-                                height="25rem"
-                              />
-                            </div>
-
-                            <div>
-                              {/* <h4 className="text-center">Cintascotch 3</h4> */}
-                              <Image
-                                alt="Cintascotch 3"
-                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="./portfolio_images/cintascotch/cinta_3.jpg"
-                                width="500rem"
-                                height="25rem"
-                              />
-                            </div>
-
-                            <div>
-                              {/* <h4 className="text-center">Cintascotch 4</h4> */}
-                              <Image
-                                alt="Cintascotch 4"
-                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
-                                src="./portfolio_images/cintascotch/cinta_4.jpg"
                                 width="500rem"
                                 height="25rem"
                               />
@@ -592,6 +643,57 @@ export default function Home() {
                         </CardBody>
                       </Card>
                     </Tab>
+                    <Tab key="cintascotch" title="Cintascotch" className="tab-item">
+                      <Card className="py-4">
+                        <CardBody className="overflow-visible py-2 items-center">
+                          <div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
+                            <div>
+                              {/* <h4 className="text-center">Cintascotch 1</h4> */}
+                              <Image
+                                alt="Cintascotch 1"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/cintascotch/cinta_1.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Cintascotch 2</h4> */}
+                              <Image
+                                alt="Cintascotch 2"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/cintascotch/cinta_2.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Cintascotch 3</h4> */}
+                              <Image
+                                alt="Cintascotch 3"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/cintascotch/cinta_3.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Cintascotch 4</h4> */}
+                              <Image
+                                alt="Cintascotch 4"
+                                className="object-cover rounded-xl overflow-hidden transition-transform duration-500 hover:scale-95 cursor-pointer"
+                                src="./portfolio_images/cintascotch/cinta_4.jpg"
+                                width="500rem"
+                                height="25rem"
+                              />
+                            </div>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </Tab>
                     <Tab key="sketches" title="Sketches" className="tab-item">
                       <Card className="py-4">
                         <CardBody className="overflow-visible py-2 items-center">
@@ -643,6 +745,33 @@ export default function Home() {
                         </CardBody>
                       </Card>
                     </Tab>
+                    <Tab key="blender" title="Blender Animation" className="tab-item">
+                      <Card className="py-4">
+                        <CardBody className="overflow-visible py-2 items-center">
+                          <div className="image-deck grid grid-cols-2 gap-4 justify-items-center items-center">
+                            <div>
+                              {/* <h4 className="text-center">Blender 1</h4> */}
+                              <iframe className="youtube-video" width="500rem" height="315rem" src="https://www.youtube.com/embed/ygrsmIlB1PA?si=IAdku4_yWnvDR35v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Blender 2</h4> */}
+                              <iframe className="youtube-video" width="500rem" height="315rem" src="https://www.youtube.com/embed/FlHtlhYgfPA?si=2H0NraMNAowza2mX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Blender 3</h4> */}
+                              <iframe className="youtube-video" width="500rem" height="315rem" src="https://www.youtube.com/embed/TkhmTlbMwuI?si=EvXfVWmOLEXa4Bzy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+
+                            <div>
+                              {/* <h4 className="text-center">Blender 4</h4> */}
+                              <iframe className="youtube-video" width="500rem" height="315rem" src="https://www.youtube.com/embed/xXyfYpICZ7s?si=C4--V3uffU7rVPLW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                          </div>
+                        </CardBody>
+                      </Card>
+                    </Tab>
                   </Tabs>
                 </div>
               </div>
@@ -680,15 +809,36 @@ export default function Home() {
                           e.preventDefault();
                           let data = Object.fromEntries(new FormData(e.currentTarget));
 
-                          // Reset form
+                          // Get form data
+                          var name = data.username;
+                          var email = data.email;
+                          var subject = data.subject;
+                          var message = data.message;
+
+                          const formData = { name, email, subject, message };
+                          const googleScriptURL = "https://script.google.com/macros/s/AKfycbzGk1wCJGClb0zz1ujaF4ThOtKDokyRhTUx_1AxSShH7y091dSJE8ixP2S6OPTh2tw4dA/exec"; // Replace with your Google Apps Script URL
+
+                          fetch(googleScriptURL, {
+                            method: "POST",
+                            mode: "no-cors",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify(formData),
+                          })
+                          .then(() => {
+                            console.log("Success:");
+                          })
+                          .catch(error => {
+                            console.error("Error:", error);
+                          });
+
                           document.getElementById("contact-form").reset();
 
-                          // Send draft to email client
-                          const receiver_email = 'shahnimish.1969@gmail.com';
-                          const subject = 'Re: Nimish Shah | Portfolio  - ' + data.subject + ' | ' + data.username + ' (' + data.email + ')';
-                          const body = 'Hi Nimish,\n\n' + data.message + '\n\nRegards,\n\n' + data.username;
+                           // Send draft to email client
+                           const receiver_email = 'shahnimish.1969@gmail.com';
+                           const subjectLine = 'Re: Nimish Shah | Portfolio  - ' + data.subject + ' | ' + data.username + ' (' + data.email + ')';
+                           const body = 'Hi Nimish,\n\n' + data.message + '\n\nRegards,\n\n' + data.username;
 
-                          const mailtoLink = `mailto:${receiver_email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                          const mailtoLink = `mailto:${receiver_email}?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(body)}`;
                           window.location.href = mailtoLink;
                         }}
                       >
@@ -898,6 +1048,16 @@ export default function Home() {
         //   overflow: hidden;
         //   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         // }
+        .youtube-video {
+          border-radius: 10px;
+        }
+        .youtube-video:hover {
+          cursor: pointer;
+          -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+          transition: all .5s;
+          opacity: 0.8;
+        }
         #contact {
           padding: 0 0 5% 0;
         }
