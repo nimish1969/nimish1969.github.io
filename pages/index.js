@@ -12,6 +12,7 @@ import { FaFileArrowDown, FaPaperPlane, FaEnvelope, FaArrowsRotate, FaGithub } f
 import { useState, useEffect, useRef } from 'react';
 import { Textarea, Form, Input, Button, Tabs, Tab, Card, CardHeader, CardBody, CardFooter, Divider, Image } from "@heroui/react";
 // import {useRouter} from 'next/router';
+import styles from '../styles/styles.animations.module.css';
 
 // Dynamically import the ClientOnlyComponent with ssr: false
 const Navbar = dynamic(() => import('./navbar'), {
@@ -167,6 +168,11 @@ export default function Home() {
       <Head>
         <title>Nimish Shah | Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Nimish Shah | Portfolio" />
+        <meta property="og:description" content="Portfolio of Nimish Shah" />
+        <meta property="og:image" content="./nimish_shah_portfolio.jpeg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nimish1969.github.io" />
         <link rel="icon" href="./favicon_io/favicon.ico" />
       </Head>
 
@@ -1293,6 +1299,7 @@ export default function Home() {
             Droid Sans,
             Helvetica Neue,
             sans-serif;
+            background: linear-gradient(#610365, #111778, #610365);
         }
         * {
           box-sizing: border-box;
