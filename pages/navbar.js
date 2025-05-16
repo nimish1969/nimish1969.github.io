@@ -57,6 +57,11 @@ export function Menu() {
 
       <NavbarContent id="brand-social-section" justify="end">
         <NavbarItem>
+          <Link color="foreground" title="Nimish Shah | Behance" target="_blank" href="https://www.behance.net/nimishshah1969">
+            <FaBehance/>
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
           <Link color="foreground" title="Nimish Shah | LinkedIn" target="_blank" href="https://www.linkedin.com/in/nimish69/">
             <FaLinkedin/>
           </Link>
@@ -72,11 +77,6 @@ export function Menu() {
           </Link>
         </NavbarItem>
         {/* <NavbarItem>
-          <Link color="foreground" title="Nimish Shah | Behance" target="_blank" href="https://www.behance.net/nimishshah">
-            <FaBehance/>
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
           <Link color="foreground" title="Nimish Shah | Dribbble" target="_blank" href="https://dribbble.com/nimishshah">
             <FaDribbble/>
           </Link>
