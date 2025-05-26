@@ -1,6 +1,6 @@
 /**
  * Author: Paurav Shah
- * Date: 2025-02-03
+ * Date: 2025-05-26
  * Version: 1.0.0
  * License: MIT
  */
@@ -12,7 +12,6 @@ import { FaFileArrowDown, FaPaperPlane, FaEnvelope, FaArrowsRotate, FaGithub } f
 import { useState, useEffect, useRef } from 'react';
 import { Textarea, Form, Input, Button, Tabs, Tab, Card, CardHeader, CardBody, CardFooter, Divider, Image } from "@heroui/react";
 // import {useRouter} from 'next/router';
-import styles from '../styles/styles.animations.module.css';
 
 // Dynamically import the ClientOnlyComponent with ssr: false
 const Navbar = dynamic(() => import('./navbar'), {
@@ -38,6 +37,7 @@ export default function Home() {
   const sectionRef2 = useRef(null);
   const sectionRef3 = useRef(null);
   const sectionRef4 = useRef(null);
+  const sectionRef5 = useRef(null);
   const [isVisible, setIsVisible] = useState(false); // Track visibility
   const [lastScrollTop, setLastScrollTop] = useState(0); // Track the last scroll position
 
@@ -70,7 +70,22 @@ export default function Home() {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
-    const observer = new IntersectionObserver(
+    const observer1 = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Section is visible in the viewport
+            entry.target.classList.add('fadeIn');
+            observer1.unobserve(entry.target); // Stop observing after first animation
+          }
+        });
+      },
+      {
+        threshold: 0.15, // 10% of the section should be in the viewport to consider it visible
+      }
+    );
+
+    const observer2 = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -118,27 +133,38 @@ export default function Home() {
 
     const section = sectionRef.current;
     if (section) {
-      observer.observe(section);
+      observer1.observe(section);
+      observer2.observe(section);
     }
 
     const section1 = sectionRef1.current;
     if (section1) {
-      observer.observe(section1);
+      observer1.observe(section1);
+      observer2.observe(section1);
     }
 
     const section2 = sectionRef2.current;
     if (section2) {
-      observer.observe(section2);
+      observer1.observe(section2);
+      observer2.observe(section2);
     }
 
     const section3 = sectionRef3.current;
     if (section3) {
-      observer.observe(section3);
+      observer1.observe(section3);
+      observer2.observe(section3);
     }
 
     const section4 = sectionRef4.current;
     if (section4) {
-      observer.observe(section4);
+      observer1.observe(section4);
+      observer2.observe(section4);
+    }
+
+    const section5 = sectionRef5.current;
+    if (section5) {
+      observer1.observe(section5);
+      observer2.observe(section5);
     }
 
     // Cleanup observer on component unmount
@@ -146,19 +172,28 @@ export default function Home() {
       window.removeEventListener('scroll', handleScroll);
       
       if (section) {
-        observer.unobserve(section);
+        observer1.unobserve(section);
+        observer2.unobserve(section);
       }
       if (section1) {
-        observer.unobserve(section1);
+        observer1.unobserve(section1);
+        observer2.unobserve(section1);
       }
       if (section2) {
-        observer.unobserve(section2);
+        observer1.unobserve(section2);
+        observer2.unobserve(section2);
       }
       if (section3) {
-        observer.unobserve(section3);
+        observer1.unobserve(section3);
+        observer2.unobserve(section3);
       }
       if (section4) {
-        observer.unobserve(section4);
+        observer1.unobserve(section4);
+        observer2.unobserve(section4);
+      }
+      if (section5) {
+        observer1.unobserve(section5);
+        observer2.unobserve(section5);
       }
     };
   }, []);
@@ -784,7 +819,11 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="contact" ref={sectionRef4}>
+          <section id="testimonials" ref={sectionRef4}>
+              
+          </section>
+
+          <section id="contact" ref={sectionRef5}>
             <p id="contact-title" className="kumar-one-regular title">Contact.</p>
             <div id="contact-content">
               <p>Get in touch to collaborate on bold and innovative digital graphic design that brings your vision to life.</p>
