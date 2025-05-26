@@ -48,6 +48,11 @@ export function Menu() {
             Portfolio
           </Link>
         </NavbarItem>
+        {/* <NavbarItem>
+          <Link id="testimonials-item" className="menuItem" color="foreground" title="Contact" href="#testimonials">
+            Testimonials
+          </Link>
+        </NavbarItem> */}
         <NavbarItem>
           <Link id="contact-item" className="menuItem" color="foreground" title="Contact" href="#contact">
             Contact
@@ -67,12 +72,12 @@ export function Menu() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" title="Nimish Shah | Instagram" target="_blank" href="https://www.instagram.com/nimishshah69/">
+          <Link color="foreground" title="Nimish Shah | Instagram" target="_blank" href="https://www.instagram.com/ncreativetech/">
             <FaInstagram/>
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" title="Nimish Shah | Facebook" target="_blank" href="https://www.facebook.com/nimesh.shah.3958">
+          <Link color="foreground" title="Nimish Shah | Facebook" target="_blank" href="https://www.facebook.com/artisticnimesh">
             <FaFacebook/>
           </Link>
         </NavbarItem>
@@ -82,7 +87,7 @@ export function Menu() {
           </Link>
         </NavbarItem> */}
         <NavbarItem>
-          <Link color="foreground" title="Nimish Shah | YouTube" target="_blank" href="https://www.youtube.com/@Cre-Tech">
+          <Link color="foreground" title="Nimish Shah | YouTube" target="_blank" href="https://www.youtube.com/@Cre-Tech/videos">
             <FaYoutube/>
           </Link>
         </NavbarItem>

@@ -29,6 +29,24 @@ body {
   color: white !important;
 }
 
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10%);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); 
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
