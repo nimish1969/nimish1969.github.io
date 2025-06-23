@@ -1,6 +1,6 @@
 /**
  * Author: Paurav Shah
- * Date: 2025-05-26
+ * Date: 2025-06-22
  * Version: 1.0.0
  * License: MIT
  */
@@ -16,6 +16,11 @@ import { Textarea, Form, Input, Button, Tabs, Tab, Card, CardHeader, CardBody, C
 // Dynamically import the ClientOnlyComponent with ssr: false
 const Navbar = dynamic(() => import('./navbar'), {
   ssr: false, // Ensures this component is only rendered on the client-side
+});
+
+// Dynamically import carousel with SSR disabled
+const DynamicCarousel = dynamic(() => import('./carousel'), {
+  ssr: false, // This is crucial for client-side only rendering
 });
 
 // Download Resume
@@ -111,6 +116,11 @@ export default function Home() {
               }
             } else if(sectionId === 'portfolio'){
               let activeLink = document.getElementById('portfolio-item');
+              if (activeLink) {
+                activeLink.classList.add('activeItem');
+              }
+            } else if(sectionId === 'testimonials'){
+              let activeLink = document.getElementById('testimonials-item');
               if (activeLink) {
                 activeLink.classList.add('activeItem');
               }
@@ -820,7 +830,11 @@ export default function Home() {
           </section>
 
           <section id="testimonials" ref={sectionRef4}>
-              
+             <p id="testimonials-title" className="kumar-one-regular title">Testimonials.</p>
+              <div id="testimonials-content">
+                  <p className="mb-8">A testimony to my work by various personalities from different walks of life.</p>
+                  <DynamicCarousel />
+              </div>
           </section>
 
           <section id="contact" ref={sectionRef5}>
@@ -982,7 +996,7 @@ export default function Home() {
           width: 100%;
           height: auto;
         }
-        #intro, #about, #services, #portfolio, #contact {
+        #intro, #about, #services, #portfolio, #testimonials, #contact {
           overflow: hidden;
           margin: auto;
           width: 80vw;
@@ -1102,6 +1116,13 @@ export default function Home() {
           transform: scale(0.95);
           transition: all .5s;
           opacity: 0.8;
+        }
+        #testimonials-content {
+          margin: 2% auto;
+          overflow: hidden;
+          width: 66vw;
+          z-index: 1;
+          text-align: center;
         }
         #contact {
           padding: 0 0 5% 0;
@@ -1273,6 +1294,13 @@ export default function Home() {
           .image-deck {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
+          }
+          #testimonials-content {
+            margin: 2% auto;
+            overflow: hidden;
+            width: 100vw;
+            z-index: 1;
+            text-align: center;
           }
           #contact-content {
             margin: 2% auto;

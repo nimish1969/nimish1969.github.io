@@ -107,6 +107,12 @@
       "static/chunks/node_modules_nextui-org_dom-animation_dist_index_mjs.js"
     ]
   },
+  "pages/index.js -> ./carousel": {
+    "id": "pages/index.js -> ./carousel",
+    "files": [
+      "static/chunks/pages_carousel_js.js"
+    ]
+  },
   "pages/index.js -> ./navbar": {
     "id": "pages/index.js -> ./navbar",
     "files": [
