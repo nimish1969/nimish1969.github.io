@@ -141,6 +141,21 @@ nav {
   opacity: 0.8 !important;
 }
 
+.testimonial-card {
+  margin: auto 2% !important;
+  width: 50% !important;
+  max-height: 40rem !important;
+  height: 30rem !important;
+}
+
+.testimonial-card:hover {
+  cursor: pointer !important;
+  -webkit-transform: scale(0.95) !important;
+  transform: scale(0.95) !important;
+  transition: all .5s !important;
+  opacity: 0.8 !important;
+}
+
 .card-footer {
   display: block !important;
   height: -webkit-fill-available !important;
@@ -149,6 +164,26 @@ nav {
 .card-footer::-webkit-scrollbar {
   width: 0 !important;
   display: none; 
+}
+
+.testimony-photo {
+  border-radius: 50%;
+  height: 150px !important;
+  width: 150px !important;
+}
+
+.ratings {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: #ffC31f;
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+  background: none !important;
 }
 
 .tab-item > .text-default-500 {
@@ -177,7 +212,7 @@ nav {
 
   #graphic-design-services-card, #animation-services-card, #threed-works-services-card {
     margin: 2% auto !important;
-    width: 100vh !important;
+    width: 100% !important;
     max-height: 30rem !important;
     height: 25rem !important;
   }
@@ -188,6 +223,17 @@ nav {
     background-position: center !important;
     background-repeat: no-repeat !important;
   } */
+
+  .testimonial-card {
+    margin: auto 2% !important; 
+    width: 100% !important;
+    max-height: 40rem !important;
+    height: 30rem !important;
+  }
+
+  .testimonial-card:hover {
+    cursor: pointer !important;
+  }
 
   #contact-form {
     width: 15rem !important;

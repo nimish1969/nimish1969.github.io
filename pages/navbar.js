@@ -48,11 +48,11 @@ export function Menu() {
             Portfolio
           </Link>
         </NavbarItem>
-        {/* <NavbarItem>
-          <Link id="testimonials-item" className="menuItem" color="foreground" title="Contact" href="#testimonials">
+        <NavbarItem>
+          <Link id="testimonials-item" className="menuItem" color="foreground" title="Testimonials" href="#testimonials">
             Testimonials
           </Link>
-        </NavbarItem> */}
+        </NavbarItem>
         <NavbarItem>
           <Link id="contact-item" className="menuItem" color="foreground" title="Contact" href="#contact">
             Contact
@@ -117,6 +117,11 @@ export function Menu() {
         <NavbarMenuItem>
           <Link id="portfolio-item" className="w-full" title="Portfolio" color="foreground" href="#portfolio" size="lg">
             Portfolio
+          </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Link id="testimonials-item" className="w-full" title="Testimonials" color="foreground" href="#testimonials" size="lg">
+            Testimonials
           </Link>
         </NavbarMenuItem>
         <NavbarMenuItem>
