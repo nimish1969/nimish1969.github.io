@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[817],{1354:(_,n,s)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/artist",function(){return s(3007)}])}},_=>{var n=n=>_(_.s=n);_.O(0,[354,134,7,636,593,792],()=>n(1354)),_N_E=_.O()}]);

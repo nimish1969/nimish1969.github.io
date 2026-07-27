@@ -107,6 +107,12 @@
       "static/chunks/node_modules_nextui-org_dom-animation_dist_index_mjs.js"
     ]
   },
+  "pages/artist.js -> ./navbar": {
+    "id": "pages/artist.js -> ./navbar",
+    "files": [
+      "static/chunks/pages_navbar_js-_07110.js"
+    ]
+  },
   "pages/index.js -> ./carousel": {
     "id": "pages/index.js -> ./carousel",
     "files": [
@@ -116,7 +122,7 @@
   "pages/index.js -> ./navbar": {
     "id": "pages/index.js -> ./navbar",
     "files": [
-      "static/chunks/pages_navbar_js.js"
+      "static/chunks/pages_navbar_js-_07111.js"
     ]
   }
 }
