@@ -43,6 +43,7 @@ export default function Home() {
   const sectionRef3 = useRef(null);
   const sectionRef4 = useRef(null);
   const sectionRef5 = useRef(null);
+  const sectionRef6 = useRef(null);
   const [isVisible, setIsVisible] = useState(false); // Track visibility
   const [lastScrollTop, setLastScrollTop] = useState(0); // Track the last scroll position
 
@@ -124,6 +125,11 @@ export default function Home() {
               if (activeLink) {
                 activeLink.classList.add('activeItem');
               }
+            } else if(sectionId === 'art-gallery'){
+              let activeLink = document.getElementById('art-gallery-item');
+              if (activeLink) {
+                activeLink.classList.add('activeItem');
+              }
             } else if(sectionId === 'contact'){
               let activeLink = document.getElementById('contact-item');
               if (activeLink) {
@@ -177,6 +183,12 @@ export default function Home() {
       observer2.observe(section5);
     }
 
+    const section6 = sectionRef6.current;
+    if (section6) {
+      observer1.observe(section6);
+      observer2.observe(section6);
+    }
+
     // Cleanup observer on component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -204,6 +216,10 @@ export default function Home() {
       if (section5) {
         observer1.unobserve(section5);
         observer2.unobserve(section5);
+      }
+      if (section6) {
+        observer1.unobserve(section6);
+        observer2.unobserve(section6);
       }
     };
   }, []);
@@ -829,6 +845,30 @@ export default function Home() {
             </div>
           </section>
 
+          <section id="art-gallery" ref={sectionRef6} className="gallery-section">
+            <p id="art-gallery-title" className="kumar-one-regular title">Art Gallery.</p>
+            <div id="art-gallery-content">
+              <p>Explore Nimish's fine art collection in a dedicated gallery experience. This section features the gallery banner image from the paintings collection.</p>
+              <a href="/artist" className="gallery-card-link" title="Go to Art Gallery">
+                <Card className="gallery-card">
+                  <div className="gallery-card-image-wrapper">
+                    <Image
+                      alt="Art Gallery Banner"
+                      src="/Paintings/banner.jpg"
+                      className="gallery-card-image"
+                      width={1200}
+                      height={400}
+                    />
+                  </div>
+                  <CardBody className="gallery-card-body">
+                    <h3 className="gallery-card-heading">Fine Art Gallery</h3>
+                    <p className="gallery-card-text">Step into the curated collection of original paintings, portraits, landscapes, and expressionist works.</p>
+                  </CardBody>
+                </Card>
+              </a>
+            </div>
+          </section>
+
           <section id="testimonials" ref={sectionRef4}>
              <p id="testimonials-title" className="kumar-one-regular title">Testimonials.</p>
               <div id="testimonials-content">
@@ -967,7 +1007,7 @@ export default function Home() {
         </main>
 
         <footer id="portfolio-footer">
-          <p>&copy; 2025 Nimish Shah. All rights reserved.</p>
+          <p>&copy; 2026 Nimish Shah. All rights reserved.</p>
           <br/>
           <Button id="github-btn" className="bordered-btn" title="Nimish Shah | GitHub" color="primary" variant="bordered" as="a" target="_blank" href="https://github.com/nimish1969">
             <FaGithub/>&nbsp;nimish1969
@@ -996,7 +1036,7 @@ export default function Home() {
           width: 100%;
           height: auto;
         }
-        #intro, #about, #services, #portfolio, #testimonials, #contact {
+        #intro, #about, #services, #portfolio, #art-gallery, #testimonials, #contact {
           overflow: hidden;
           margin: auto;
           width: 80vw;
@@ -1101,6 +1141,78 @@ export default function Home() {
           margin-top: 5%;
           text-align: center;
         }
+        #art-gallery {
+          margin: 2% auto;
+          overflow: hidden;
+          width: 66vw;
+          z-index: 1;
+          text-align: center;
+        }
+        #art-gallery-content {
+          margin-top: 2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 1.5rem;
+        }
+        .gallery-card-link {
+          display: block;
+          width: 100%;
+          max-width: 900px;
+          text-decoration: none;
+          color: inherit;
+        }
+        .gallery-card {
+          width: 100%;
+          overflow: hidden;
+          border-radius: 2rem;
+          border: 1px solid rgba(255, 195, 31, 0.25);
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+          background: rgba(12, 15, 28, 0.95);
+        }
+        .gallery-card:hover {
+          transform: translateY(-6px);
+          border-color: rgba(255, 195, 31, 0.45);
+          box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+        }
+        .gallery-card-image-wrapper {
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          aspect-ratio: 16 / 9;
+        }
+        .gallery-card-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+        .gallery-card:hover .gallery-card-image {
+          transform: scale(1.03);
+        }
+        .gallery-card-body {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          padding: 1.2rem 1.2rem 1.4rem;
+          background: linear-gradient(180deg, rgba(12, 15, 28, 0) 0%, rgba(12, 15, 28, 0.92) 100%);
+          backdrop-filter: blur(6px);
+          z-index: 1;
+        }
+        .gallery-card-heading {
+          color: #ffC31f;
+          margin: 0 0 0.35rem 0;
+          font-size: 1.75rem;
+          line-height: 1.1;
+        }
+        .gallery-card-text {
+          color: #e5e7eb;
+          line-height: 1.55;
+          margin: 0;
+        }
         // .slider-container {
         //   position: relative;
         //   border-radius: 10px;
@@ -1200,12 +1312,22 @@ export default function Home() {
             width: 100%;
             height: auto;
           }
-          #intro, #about, #services, #portfolio, #contact {
+          #intro, #about, #services, #portfolio, #art-gallery, #contact {
             overflow: hidden;
             margin: auto;
             width: 80vw;
             height: auto;
             z-index: 1;
+          }
+          .gallery-card-body {
+            padding: 1.2rem 1.2rem 1.2rem;
+          }
+          .gallery-card-heading {
+            font-size: 1.55rem;
+            margin-bottom: 0.45rem;
+          }
+          .gallery-card-text {
+            line-height: 1.6;
           }
           #intro {
             margin: 0 10% 0 10%;
@@ -1278,6 +1400,52 @@ export default function Home() {
             width: 100vw;
             z-index: 1;
             text-align: center;
+          }
+          #art-gallery {
+            margin: 2% auto;
+            overflow: hidden;
+            width: 100vw;
+            z-index: 1;
+            text-align: center;
+          }
+          #art-gallery-content {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            width: 100%;
+          }
+          .gallery-card-link {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+          }
+          .gallery-card {
+            width: 100%;
+            border-radius: 1.5rem;
+          }
+          .gallery-card-image-wrapper {
+            position: relative;
+            aspect-ratio: 16 / 9;
+          }
+          .gallery-card-body {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 1rem 1rem 1.2rem;
+            background: linear-gradient(180deg, rgba(12, 15, 28, 0) 0%, rgba(12, 15, 28, 0.92) 100%);
+            backdrop-filter: blur(6px);
+          }
+          .gallery-card-heading {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+          }
+          .gallery-card-text {
+            line-height: 1.45;
+            margin: 0;
           }
           #my-portfolio {
             margin-top: 10%;
